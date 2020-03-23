@@ -1,4 +1,10 @@
 /* css */
 * {
-    background-color: salmon; 
+    background-color:  rgba(254, 95, 85, 1); 
+}
+
+#carouselExampleControls{
+    height: 400px;
+    width: 80%;
+   margin: 0 auto;
 }
