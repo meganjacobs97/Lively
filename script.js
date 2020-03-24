@@ -55,7 +55,7 @@ $.ajax({
     processData: true, //data is an object => tells jQuery to construct URL params from it
   }).then(function(data) {
       console.log(data); //what to do with response data on success
-});
+
 
       console.log(data.location_suggestions[0].title)
       cityID = data.location_suggestions[0].city_id // city id is used on next ajax call
@@ -77,7 +77,7 @@ $.ajax({
         processData: true, 
         }).then(function(data) {
           console.log(data);
-        }
+        
       });
       $.ajax({
         type: "GET", 
@@ -88,11 +88,14 @@ $.ajax({
         dataType: 'json',
         
         processData: true, 
-        success: function(data) {
+      }).then(function(data) {
           console.log(data);
-        }
+        
       });
-  });
+    });
+
+      
+
     
 
 
