@@ -35,6 +35,7 @@ $('.movePrevCarousel').click(function(e){
   e.preventDefault();
   e.stopPropagation();
   $('.carousel').carousel('prev');
+}); 
 
 // script
 
@@ -117,19 +118,42 @@ $.ajax({
 
 
 
+  //MAP call to get lon and lat for hiking 
+
+  //if two word city, need to replace space with a plus sign 
+  var cityNoSpaces = cityName.replace(" ","+")
+  var mapsKey = "AIzaSyAsQJipmAbkxBxkMoKKTeQlXIYHKBAeiQA"; 
+  var mapsURL = "https://maps.googleapis.com/maps/api/geocode/json?address=" + cityNoSpaces + "&key=" + mapsKey; 
+  
+  $.ajax ({
+    url: mapsURL, 
+    method: "GET"
+  }).then(function(mapsResponse) {
+    console.log(mapsResponse); 
+    var lat = mapsResponse.results[0].geometry.location.lat; 
+    var lon = mapsResponse.results[0].geometry.location.lng; 
+
+    //hiking ajax call - will want to put this call inside weather call, which will provide lat and long 
+    var hikingKey = "200711521-6e472fe6d7868e96f3ed6374e0204664"; 
+
+    var hikingURL = "https://www.hikingproject.com/data/get-trails?lat=" + lat + "&lon=" + lon + "&key=" + hikingKey; 
+    $.ajax({
+      url: hikingURL,
+      method: "GET"
+    }).then(function(hikingResponse) {
+      console.log(hikingResponse); 
+
+    }); 
+}); 
 
 
-
-
-
-
+  
 
 
 
 
 //eventful ajax call
-//if two word city, need to replace space with a plus sign 
-var cityNoSpaces = cityName.replace(" ","+")
+
 var eventfulKey = "S2Nw4XHRLF4k2Hsz"; 
 // use herokuapp to fix CORS issue 
 var eventfulQueryURL = "https://cors-anywhere.herokuapp.com/http://api.eventful.com/rest/events/search?...&location=" + cityNoSpaces + "&date=Future" + "&app_key=" + eventfulKey; 
@@ -139,20 +163,5 @@ $.ajax({
 }).then(function(eventfulResponse) {
   console.log(eventfulResponse); 
 }); 
-
-
-//hiking ajax call - will want to put this call inside weather call, which will provide lat and long 
-var lat = "47";
-var lon = "-122";
-var hikingKey = "200711521-6e472fe6d7868e96f3ed6374e0204664"; 
-
-var hikingURL = "https://www.hikingproject.com/data/get-trails?lat=" + lat + "&lon=" + lon + "&key=" + hikingKey; 
-$.ajax({
-  url: hikingURL,
-  method: "GET"
-}).then(function(hikingResponse) {
-  console.log(hikingResponse); 
-
-});
 
 
