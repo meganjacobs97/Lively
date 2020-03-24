@@ -37,28 +37,28 @@ $('.movePrevCarousel').click(function(e){
   $('.carousel').carousel('prev');
 }); 
 
-// script
 
+// Zomato API
 
 var cityName = "seattle";
-var foodsKey = "e6b865792885e0c46ec11c9c6a86dd32";
-var foodsURL1 = "https://developers.zomato.com/api/v2.1/locations?query=" + cityName;
+var foodKey = "e6b865792885e0c46ec11c9c6a86dd32";
+var foodURL = "https://developers.zomato.com/api/v2.1/locations?query=" + cityName;
 var cityID;
 
 $.ajax({
     type: "GET",
     headers: {
-      'X-Zomato-API-Key': foodsKey 
+      'X-Zomato-API-Key': foodKey 
     },
-    url: foodsURL1,
+    url: foodURL,
     dataType: 'json',
-    processData: true, //data is an object => tells jQuery to construct URL params from it
+    processData: true, 
   }).then(function(data) {
-      console.log(data); //what to do with response data on success
+      console.log(data); 
 
 
       console.log(data.location_suggestions[0].title)
-      cityID = data.location_suggestions[0].city_id // city id is used on next ajax call
+      cityID = data.location_suggestions[0].city_id // cityID is used on next ajax call
       console.log(cityID)
       var collectionURL = "https://developers.zomato.com/api/v2.1/collections?city_id=" + cityID; // collection of restaurants
       var establishmentsURL = "https://developers.zomato.com/api/v2.1/establishments?city_id=" + cityID; // list of establishments
@@ -68,12 +68,11 @@ $.ajax({
       $.ajax({
         type: "GET", 
         headers: {
-          'X-Zomato-API-Key': foodsKey
+          'X-Zomato-API-Key': foodKey
         },
-        url: collectionURL,
+        url: collectionURL, // list of zomato collections
         dataType: 'json',
         
-
         processData: true, 
         }).then(function(data) {
           console.log(data);
@@ -82,9 +81,9 @@ $.ajax({
       $.ajax({
         type: "GET", 
         headers: {
-          'X-Zomato-API-Key': foodsKey
+          'X-Zomato-API-Key': foodKey
         },
-        url: establishmentsURL,
+        url: establishmentsURL, // list of establishments
         dataType: 'json',
         
         processData: true, 
@@ -270,7 +269,7 @@ $.ajax({
 
 
 
-// weather ajax
+// Weather API
 
 var weatherKey = "65a7ca57e07ca382d1467087756ebdfd";
 var weatherCity = "seattle"
