@@ -166,6 +166,40 @@ $.ajax({
       method: "GET"
     }).then(function(hikingResponse) {
       console.log(hikingResponse); 
+      var trail1Name = hikingResponse.trails[0].name; 
+      var trail1Location = hikingResponse.trails[0].location; 
+      var trail1Summary = hikingResponse.trails[0].summary; 
+      var trail1ImageURL = hikingResponse.trails[0].imgSmall; 
+      var trail1Length = hikingResponse.trails[0].length; 
+      var trail1Link = hikingResponse.trails[0].url; 
+
+      var trail2Name = hikingResponse.trails[1].name; 
+      var trail2Location = hikingResponse.trails[1].location; 
+      var trail2Summary = hikingResponse.trails[1].summary; 
+      var trail2ImageURL = hikingResponse.trails[1].imgSmall; 
+      var trail2Length = hikingResponse.trails[1].length; 
+      var trail2Link = hikingResponse.trails[1].url;
+
+      var trail3Name = hikingResponse.trails[2].name; 
+      var trail3Location = hikingResponse.trails[2].location; 
+      var trail3Summary = hikingResponse.trails[2].summary; 
+      var trail3ImageURL = hikingResponse.trails[2].imgSmall; 
+      var trail3Length = hikingResponse.trails[2].length; 
+      var trail3Link = hikingResponse.trails[2].url;
+
+      var trail4Name = hikingResponse.trails[3].name; 
+      var trail4Location = hikingResponse.trails[3].location; 
+      var trail4Summary = hikingResponse.trails[3].summary; 
+      var trail4ImageURL = hikingResponse.trails[3].imgSmall; 
+      var trail4Length = hikingResponse.trails[3].length; 
+      var trail4Link = hikingResponse.trails[3].url;
+
+      var trail5Name = hikingResponse.trails[4].name; 
+      var trail5Location = hikingResponse.trails[4].location; 
+      var trail5Summary = hikingResponse.trails[4].summary; 
+      var trail5ImageURL = hikingResponse.trails[4].imgSmall; 
+      var trail5Length = hikingResponse.trails[4].length; 
+      var trail5Link = hikingResponse.trails[4].url;
 
     }); 
 }); 
@@ -186,6 +220,51 @@ $.ajax({
   method: "GET"
 }).then(function(eventfulResponse) {
   console.log(eventfulResponse); 
+  
+  var event1 = eventfulResponse.firstChild.lastElementChild.firstElementChild; 
+  
+  var event1Title = $(event1).children("title").text();
+  var event1URL = $(event1).children("url").text();
+  var event1Venue = $(event1).children("venue_name").text();
+  var event1VenueAddress = $(event1).children("venue_address").text();
+  var event1VenueCity = $(event1).children("city_name").text();
+  var event1Time = $(event1).children("start_time").text();
+
+  var event2 = event1.nextElementSibling; 
+
+  var event2Title = $(event2).children("title").text();
+  var event2URL = $(event2).children("url").text();
+  var event2Venue = $(event2).children("venue_name").text();
+  var event2VenueAddress = $(event2).children("venue_address").text();
+  var event2VenueCity = $(event2).children("city_name").text();
+  var event2Time = $(event2).children("start_time").text();
+
+  var event3 = event2.nextElementSibling; 
+
+  var event3Title = $(event3).children("title").text();
+  var event3URL = $(event3).children("url").text();
+  var event3Venue = $(event3).children("venue_name").text();
+  var event3VenueAddress = $(event3).children("venue_address").text();
+  var event3VenueCity = $(event3).children("city_name").text();
+  var event3Time = $(event3).children("start_time").text();
+
+  var event4 = event3.nextElementSibling; 
+
+  var event4Title = $(event4).children("title").text();
+  var event4URL = $(event4).children("url").text();
+  var event4Venue = $(event4).children("venue_name").text();
+  var event4VenueAddress = $(event4).children("venue_address").text();
+  var event4VenueCity = $(event4).children("city_name").text();
+  var event4Time = $(event4).children("start_time").text();
+
+  var event5 = event4.nextElementSibling; 
+
+  var event5Title = $(event5).children("title").text();
+  var event5URL = $(event5).children("url").text();
+  var event5Venue = $(event5).children("venue_name").text();
+  var event5VenueAddress = $(event5).children("venue_address").text();
+  var event5VenueCity = $(event5).children("city_name").text();
+  var event5Time = $(event5).children("start_time").text();
 }); 
 
 
