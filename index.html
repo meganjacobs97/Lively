@@ -1,251 +1,206 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
-
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Document</title>
-  
-  <!-- materialize link, materialize is another css framework -->
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
+  <!-- link to bulma -->
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.8.0/css/bulma.min.css">
+  <script defer src="https://use.fontawesome.com/releases/v5.3.1/js/all.js"></script>
   <!-- css link -->
   <link rel="stylesheet" href="style.css">
-  <!-- font link for logo lively-->
+  <!-- google font link for logo lively -->
   <link href="https://fonts.googleapis.com/css?family=Pacifico&display=swap" rel="stylesheet">
-  <!-- font navbar tabs -->
+  <!-- google font navbar tabs -->
   <link href="https://fonts.googleapis.com/css?family=Fredoka+One&display=swap" rel="stylesheet">
-
 </head>
-
-
 <body>
-
-  <!-- navbar -->
-  <nav>
-    <div class="nav-wrapper">
-      <a href="#" id="logo" class="brand-logo">Lively</a>
-      <ul id="nav-mobile" class="right hide-on-med-and-down">
-        <!-- need to change the href -->
-        <li><a href="sass.html">pictures</a></li>
-        <li><a href="badges.html">Buttons</a></li>
-        <li><a href="collapsible.html">Contact us</a></li>
-      </ul>
+  <!-- Navbar  -->
+  <nav class="navbar" role="navigation" aria-label="main navigation">
+    <div class="navbar-brand">
+      <strong> <h1 class="logo"> lively </h1></strong>
+      </a>
+      <a role="button" class="navbar-burger burger" aria-label="menu" aria-expanded="false"
+        data-target="navbarBasicExample">
+        <span aria-hidden="true"></span>
+        <span aria-hidden="true"></span>
+        <span aria-hidden="true"></span>
+      </a>
+    </div>
+    <div id="navbarBasicExample" class="navbar-menu">
+      <div class="navbar-start">
+        <a class="navbar-item">
+          Home
+        </a>
+        <a class="navbar-item">
+          Documentation
+        </a>
+        <div class="navbar-item has-dropdown is-hoverable">
+          <a class="navbar-link">
+            More
+          </a>
+          <div class="navbar-dropdown">
+            <a class="navbar-item">
+              About
+            </a>
+            <a class="navbar-item">
+              Jobs
+            </a>
+            <a class="navbar-item">
+              Contact
+            </a>
+            <hr class="navbar-divider">
+            <a class="navbar-item">
+              Report an issue
+            </a>
+          </div>
+        </div>
+      </div>
+      <div class="navbar-end">
+        <div class="navbar-item">
+          <div class="buttons">
+            <a class="button is-light">
+              Log in
+            </a>
+            <a class="button is-light">
+              About us
+            </a>
+            <a class="button is-light">
+              contact
+            </a>
+          </div>
+        </div>
+      </div>
     </div>
   </nav>
-
-
-  <div class="container">
-    <div class="carousel carousel-slider center " data-indicators="true">
-      <div class="carousel-fixed-item center middle-indicator">
-       <div class="left">
-        <a href="Previo" class="movePrevCarousel middle-indicator-text waves-effect waves-light content-indicator"><i class="material-icons left  middle-indicator-text">chevron_left</i></a>
-       </div>
-       
-       <div class="right">
-       <a href="Siguiente" class=" moveNextCarousel middle-indicator-text waves-effect waves-light content-indicator"><i class="material-icons right middle-indicator-text">chevron_right</i></a>
-       </div>
+  </button>
+  <div id="coverphotocontainer">
+    <section class="section">
+      <div class="container">
+        <!-- <img src="https://images.unsplash.com/photo-1418065460487-3e41a6c84dc5?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=800&q=60" alt="coverphoto"> -->
+        <div class="userInput">
+          <h1 style="text-align: center;"> Are you looking for some fun?</h1>
+          <p style="text-align: center;"> Here at lively, we have gathered some of the best recommendations for you!
+          </p>
+          <p style="text-align: center;"> Enter your city: </p>
+          <form class="pure-form" style="text-align: center;">
+            <input type="text" class="pure-input-rounded">
+            <button type="submit" class="pure-button">Search</button>
+          </form>
+        </div>
       </div>
-      <div class="carousel-item lime darken-3 white-text" href="#one!">
-        <h2>Do you miss the fresh air in nature?</h2>
-        <p class="white-text">Are you looking for an opportunity to explore the Wilderness?</p>
-        <img class="mainphoto" 
-        src="https://images.unsplash.com/photo-1504472827866-9b077b2dc249?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1500&q=80"></a>
-      </div>
-      <div class="carousel-item deep-orange darken-4 white-text" href="#two!">
-        <h2>Do you want to invite your loved ones to have healthy food together? </h2>
-        <p class="white-text">Are you looking for a nice experience for your dine out?</p>
-        <img class="mainphoto" 
-        src="https://images.unsplash.com/photo-1577308856961-8e9ec50d0c67?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1500&q=80"></a>
-      </div>
-      <div class="carousel-item red lighten-2 white-text" href="#three!">
-        <h2>Is lack of time not letting you find events that might interest you?</h2>
-        <p class="white-text">Do you miss to do a fun activity with your friends?</p>
-        <img class="mainphoto" 
-        src="https://images.unsplash.com/photo-1517637633369-e4cc28755e01?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1500&q=80"></a>
-      </div>
-      <div class="carousel-item  red lighten-3 white-text" href="#four!">
-        <h2>If yes, You are at the right place!</h2>
-        <p class="white-text">at Lively, we have gathered some of the best recommedations for you!</p>
-        <p class="white-text">Enter the city you would like to search in the area below: </p>
-
-        <!-- <a class="waves-effect waves-light btn-large"> -->
-        <div id="inputform" class="row">
-          <div class="col s4">
-            <div class="row">
-              <div class="input-field col s4">
-                <i class="material-icons prefix">textsms</i>
-                <input type="text" id="autocomplete-input" class="autocomplete">
-                <label for="autocomplete-input">Autocomplete</label>
+    </section>
+  </div>
+  <div class="columns is-mobile">
+    <div class="column">
+      <div class="card">
+        <div class="card-image">
+          <figure class="image">
+            <img
+              src="https://images.unsplash.com/photo-1571167366136-b57e07761625?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=800&q=60"
+              alt="Placeholder image">
+          </figure>
+        </div>
+        <div class="card-content">
+          <div class="media">
+            <div class="media-content">
+              <p class="title is-4">Food</p>
+              <div class="container" id="app">
+                <p>
+                  <button class="button button-modal" id="showModal" data-API="food">Show</button>
+                </p>
               </div>
             </div>
           </div>
         </div>
-      <!-- </a> -->
-
       </div>
     </div>
-  
-  </div>
-
-
-  <!-- <div class="carousel carousel-slider">
-    
-    <a class="carousel-item" href="#one!"><img class="mainphoto" 
-        src="https://images.unsplash.com/photo-1504472827866-9b077b2dc249?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1500&q=80"></a>
-    <a class="carousel-item" href="#two!"><img class="mainphoto" 
-        src="https://images.unsplash.com/photo-1577308856961-8e9ec50d0c67?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1500&q=80"></a>
-    <a class="carousel-item" href="#three!"><img class="mainphoto" 
-        src="https://images.unsplash.com/photo-1517637633369-e4cc28755e01?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1500&q=80"></a>
-  </div> -->
-
-
-
-
-
-  <div class="container">
-
-
-
-    <div class="rowOne">
-
-      <div class="col s8">
-        <div class="carousel">
-          <a class="carousel-item" href="#one!"><img
-              src="https://images.unsplash.com/photo-1511690743698-d9d85f2fbf38?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=668&q=80"></a>
-          <a class="carousel-item" href="#three!"><img
-              src="https://images.unsplash.com/photo-1478145046317-39f10e56b5e9?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=2468&q=80"></a>
-          <a class="carousel-item" href="#six!"><img
-              src="https://images.unsplash.com/photo-1467003909585-2f8a72700288?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=668&q=80"></a>
-          <a class="carousel-item" href="#seven!!"><img
-              src="https://images.unsplash.com/photo-1488900128323-21503983a07e?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=2468&q=80"></a>
-          <a class="carousel-item" href="#fourteen!"><img
-              src="https://images.unsplash.com/photo-1536510344784-b43e97721c1f?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=668&q=80"></a>
+    <div class="column">
+      <div class="card">
+        <div class="card-image">
+          <figure class="image">
+            <img
+              src="https://images.unsplash.com/photo-1500049242364-5f500807cdd7?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=800&q=60"
+              alt="Placeholder image">
+          </figure>
         </div>
-      </div>
-
-      <div id="foodBtn" class="col s3">
-        <a class="waves-effect waves-light btn-large">Food</a>
+        <div class="card-content">
+          <div class="media">
+            <div class="media-content">
+              <p class="title is-4">Hiking</p>
+              <div class="container" id="app">
+                <p>
+                  <button class="button button-modal" id="showModal" data-API="hiking">Show</button>
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
       </div>
     </div>
-
-
-
-
-
-
-    <div class="rowTwo">
-
-      <div class="col s8">
-        <div class="carousel">
-          <a class="carousel-item" href="#five!"><img
-              src="https://images.unsplash.com/photo-1570183157321-3baee604b759?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=690&q=80"></a>
-          <a class="carousel-item" href="#eight!"><img
-              src="https://images.unsplash.com/photo-1570183006073-73922629d48a?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=668&q=80"></a>
-          <a class="carousel-item" href="#nine!"><img
-              src="https://images.unsplash.com/photo-1549887552-cb1071d3e5ca?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=800&q=60"></a>
-          <a class="carousel-item" href="#ten!"><img
-              src="https://images.unsplash.com/photo-1495791185843-c73f2269f669?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=668&q=80"></a>
-          <a class="carousel-item" href="#fifteen!"><img
-              src="https://images.unsplash.com/photo-1471018238625-87ca40f13b31?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=668&q=80"></a>
-
+    <div class="column">
+      <div class="card">
+        <div class="card-image">
+          <figure class="image">
+            <img
+              src="https://images.unsplash.com/flagged/photo-1574097113271-197a575f0d22?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=800&q=60"
+              alt="Placeholder image">
+          </figure>
         </div>
-        <a class="waves-effect waves-light btn-large">Events</a>
-
-      </div>
-    </div>
-
-
-
-
-
-
-    <div class="rowThree">
-
-      <div class="col s8">
-        <div class="carousel">
-          <a class="carousel-item" href="#two!"><img
-              src="https://images.unsplash.com/photo-1520161379304-1c0f3f8d9a62?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=666&q=80"></a>
-          <a class="carousel-item" href="#four!"><img
-              src="https://images.unsplash.com/photo-1502943615053-d8bd8c74eb1b?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=668&q=80"></a>
-          <a class="carousel-item" href="#eleven!"><img
-              src="https://images.unsplash.com/photo-1501761095094-94d36f57edbb?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=802&q=80"></a>
-          <a class="carousel-item" href="#twelve!"><img
-              src="https://images.unsplash.com/photo-1523506591153-1504ba186b3b?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=800&q=80"></a>
-
+        <div class="card-content">
+          <div class="media">
+            <div class="media-content">
+              <p class="title is-4">Events</p>
+              <div class="container" id="app">
+                <p>
+                  <button class="button button-modal" id="showModal" data-API="events" >Show</button>
+                </p>
+              </div>
+            </div>
+          </div>
         </div>
-        <a class="waves-effect waves-light btn-large">Hiking</a>
-
       </div>
     </div>
   </div>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-<!-- footer (needs to be modified) -->
-  <footer class="page-footer">
-    <div class="container">
-      <div class="row">
-        <div class="col l6 s12">
-          <h5 class="white-text">Footer Content</h5>
-          <p class="grey-text text-lighten-4">You can use rows and columns here to organize your footer content.</p>
-        </div>
-        <div class="col l4 offset-l2 s12">
-          <h5 class="white-text">Links</h5>
-          <ul>
-            <li><a class="grey-text text-lighten-3" href="#!">Link 1</a></li>
-            <li><a class="grey-text text-lighten-3" href="#!">Link 2</a></li>
-            <li><a class="grey-text text-lighten-3" href="#!">Link 3</a></li>
-            <li><a class="grey-text text-lighten-3" href="#!">Link 4</a></li>
-          </ul>
+  <div class="aboutUs">
+    pictures of the four of us
+  </div>
+  <div class="modal">
+    <div class="modal-background"></div>
+    <div class="modal-content">
+      <!-- Any other Bulma elements you want -->
+      <table>
+        <tr>
+          <td>Results</td>
+          <td>Hi</td>
+        </tr>
+      </table>
+    </div>
+    <button class="modal-close"></button>
+  </div>
+  <footer class="footer">
+    <div class="field is-horizontal">
+      <div class="field-label is-normal">
+        <label class="label">To</label>
+      </div>
+      <div class="field-body">
+        <div class="field">
+          <p class="control">
+            <input class="input" type="email" placeholder="Recipient email">
+          </p>
         </div>
       </div>
     </div>
-    <div class="footer-copyright">
-      <div class="container">
-      © 2014 Copyright Text
-      <a class="grey-text text-lighten-4 right" href="#!">More Links</a>
-      </div>
+    <div class="content has-text-centered">
+      <p>
+        <strong class="logo">lively</strong> by <strong>Team 2</strong>
+      </p>
     </div>
   </footer>
-
-
-
-
-
-
-
-
-
-
-
-
   <!-- jQuery link -->
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
-  <!-- links for materialize -->
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
-  
   <!-- javascript link -->
   <script src="script.js"></script>
-
-
 </body>
-
 </html>

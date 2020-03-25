@@ -1,120 +1,37 @@
-/* css */
-
-/* to store colors as variables */
-:root {
-    --main-bg-color:rgb(43, 3, 39);
-  }
-/* to grab the color by its var */
-  element {
-    background-color: var(--main-bg-color);
-  }
-
-/* * {
-    background-color:  rgb(43, 3, 39); 
-} */
-
-.nav-wrapper{
-  background-color:  rgb(43, 3, 39); 
-}
-
 body{
   background-color: rgba(73, 53, 72, 1);
 }
 
 
-/* .carousel{
-    height: 200px;
-    width: 50%;
-   margin: 0 auto;
-} */
+/* this color is not working */
+.navbar{
+  background-color:  rgb(43, 3, 39); 
+}
 
-/* font website name */
-#logo{
-  font-family: 'Pacifico', cursive;
+.logo{
+  font-family:'Pacifico', cursive;
   color:#f50057;
-}
-/* font navbar tabs */
-#nav-mobile{
-  font-family: 'Fredoka One', cursive;
-}
-.carousel-item{
-  margin:0 auto;
-
- 
+  font-size: 28px;
 }
 
+#coverphotocontainer{
+  background-image: "https://images.unsplash.com/photo-1418065460487-3e41a6c84dc5?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=800&q=60" ;
+  width:100%;
+  height: 500px;
+  
+}
 
-.mainphoto{
-height: 500px;
-width: 60%;
-margin:0 auto;
+.userInput{
+color: white;
+}
+
+.card{
+  margin: 10px;
 
 }
 
-.container{
-  align-content: center;
+/* the color not working */
+.footer{
+  background-color: rgb(43, 3, 39);
 }
-
-#foodBtn{
-  align-content: center;
-}
-
-
-/* start of code for main carousel */
-/* just for jsfiddle */
-@font-face {
-  font-family: 'Material Icons';
-  font-style: normal;
-  font-weight: 400;
-  src: local('Material Icons'), local('MaterialIcons-Regular'), url(https://fonts.gstatic.com/s/materialicons/v18/2fcrYFNaTjcS6g4U3t-Y5ZjZjT5FdEJ140U2DJYC3mY.woff2) format('woff2');
-}
-
-.material-icons {
-  font-family: 'Material Icons';
-  font-weight: normal;
-  font-style: normal;
-  font-size: 24px;
-  line-height: 1;
-  letter-spacing: normal;
-  text-transform: none;
-  display: inline-block;
-  white-space: nowrap;
-  word-wrap: normal;
-  direction: ltr;
-  -moz-font-feature-settings: 'liga';
-  -moz-osx-font-smoothing: grayscale;
-}
-
-.middle-indicator{
-   position:absolute;
-   top:50%;
-   }
-  .middle-indicator-text{
-   font-size: 4.2rem;
-  }
-  a.middle-indicator-text{
-    color:white !important;
-  }
-.content-indicator{
-    width: 64px;
-    height: 64px;
-    background: none;
-    -moz-border-radius: 50px;
-    -webkit-border-radius: 50px;
-    border-radius: 50px; 
-  }
-    .indicators{
-  	visibility: hidden;
-  }
-
-/* up to here was for the main carousel */
-
-
-  .page-footer{
-background-color: rgb(43, 3, 39);
-  }
-
-  #inputform{
-    background-color:#f50057 ;
-  }
 

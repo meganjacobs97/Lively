@@ -1,4 +1,23 @@
 
+$(document).ready(function(){
+  $(".button-modal").on("click", function() {
+    var APIkeyword=$(this).attr("data-API");
+    console.log(APIkeyword);
+    if(APIkeyword=== "food"){
+// call food API and show food information
+    }
+    if(APIkeyword=== "hiking"){
+// call hiking API and show hiking information
+    }
+    if(APIkeyword=== "events"){
+// call events API and show events information
+    }
+    $(".modal").addClass("is-active");  
+  });
+  $(".modal-close").click(function() {
+     $(".modal").removeClass("is-active");
+  });
+}); 
 
 // jQuery for the main carousel
 $(document).ready(function(){
