@@ -112,8 +112,7 @@ function showFood() {
 
 
 
-    showHiking(); 
-    showEvents(); 
+   
 
 
   function showHiking() {
@@ -512,3 +511,13 @@ function showWeather() {
     }
   });
 }
+
+$("#foodBtn").on("click",function() {
+  showFood(); 
+}); 
+$("#eventsBtn").on("click",function() {
+  showEvents(); 
+}); 
+$("#hikingBtn").on("click",function() {
+  showHiking(); 
+}); 
