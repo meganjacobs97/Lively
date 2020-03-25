@@ -19,42 +19,7 @@ $(document).ready(function(){
   });
 }); 
 
-// jQuery for the main carousel
-$(document).ready(function(){
-  $('.carousel').carousel();
-  fullWidth: true
 
-});
-
-
-// to give carousel a time interval but unfortunately it also gave time to the other pictures! :/
-// setInterval(function(){
-//   $('.carousel').carousel('next');
-// }, 3000);
-
-
-    
-
-// start carrousel
-$('.carousel.carousel-slider').carousel({
-  fullWidth: true,
-  indicators: false
-});
-
-
-// move next carousel
-$('.moveNextCarousel').click(function(e){
-  e.preventDefault();
-  e.stopPropagation();
-  $('.carousel').carousel('next');
-});
-
-// move prev carousel
-$('.movePrevCarousel').click(function(e){
-  e.preventDefault();
-  e.stopPropagation();
-  $('.carousel').carousel('prev');
-}); 
 
 
 // Zomato API
@@ -112,6 +77,16 @@ $.ajax({
       });
     });
 
+    document.addEventListener('DOMContentLoaded', function() {
+      var elems = document.querySelectorAll('.parallax');
+      var instances = M.Parallax.init(elems, options);
+    });
+  
+    // Or with jQuery
+  
+    $(document).ready(function(){
+      $('.parallax').parallax();
+    });
       
 
     
