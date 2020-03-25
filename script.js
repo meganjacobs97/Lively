@@ -1,29 +1,4 @@
 
-// $(document).ready(function(){
-//   $(".button-modal").on("click", function() {
-//     var APIkeyword=$(this).attr("data-API");
-//     console.log(APIkeyword);
-//     if(APIkeyword=== "food"){
-// // call food API and show food information
-//       showFood(); 
-//     }
-//     if(APIkeyword=== "hiking"){
-// // call hiking API and show hiking information
-//       showHiking(); 
-//     }
-//     if(APIkeyword=== "events"){
-// // call events API and show events information
-//       showEvents(); 
-//     }
-//     $(".modal").addClass("is-active");  
-//   });
-//   $(".modal-close").click(function() {
-//      $(".modal").removeClass("is-active");
-//   });
-// }); 
-
-
-
 function showFood() {
   // Zomato API
 
@@ -81,6 +56,7 @@ function showFood() {
       });
     }
 
+<<<<<<< HEAD
     // document.addEventListener('DOMContentLoaded', function() {
     //   var elems = document.querySelectorAll('.parallax');
     //   var instances = M.Parallax.init(elems, options);
@@ -92,6 +68,8 @@ function showFood() {
     //   $('.parallax').parallax();
     // });
       
+=======
+>>>>>>> development
 
     
 
