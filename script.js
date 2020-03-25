@@ -165,7 +165,7 @@ function showFood() {
         newButton.text("Learn more"); 
         newButton.attr("class","waves-effect waves-light btn"); 
         newButton.click(function() {
-          window.location=trail1Link;
+          window.open(trail1Link);
         });
         $("#hikingResult1").append(newButton);
 
@@ -176,12 +176,52 @@ function showFood() {
         var trail2Length = hikingResponse.trails[1].length; 
         var trail2Link = hikingResponse.trails[1].url;
 
+        var newh5 = $("<h5>");
+        newh5.text(trail2Name); 
+        $("#hikingResult2").append(newh5); 
+
+        var newp = $("<p>");
+        newp.text(trail2Location + " • " + trail2Length + " miles");
+        $("#hikingResult2").append(newp); 
+
+        var newpSummary = $("<p>"); 
+        newpSummary.text(trail2Summary); 
+        $("#hikingResult2").append(newpSummary); 
+
+        var newButton = $("<button>"); 
+        newButton.text("Learn more"); 
+        newButton.attr("class","waves-effect waves-light btn"); 
+        newButton.click(function() {
+          window.open(trail2Link);
+        });
+        $("#hikingResult2").append(newButton);
+
         var trail3Name = hikingResponse.trails[2].name; 
         var trail3Location = hikingResponse.trails[2].location; 
         var trail3Summary = hikingResponse.trails[2].summary; 
         var trail3ImageURL = hikingResponse.trails[2].imgSmall; 
         var trail3Length = hikingResponse.trails[2].length; 
         var trail3Link = hikingResponse.trails[2].url;
+
+        var newh5 = $("<h5>");
+        newh5.text(trail3Name); 
+        $("#hikingResult3").append(newh5); 
+
+        var newp = $("<p>");
+        newp.text(trail3Location + " • " + trail3Length + " miles");
+        $("#hikingResult3").append(newp); 
+
+        var newpSummary = $("<p>"); 
+        newpSummary.text(trail3Summary); 
+        $("#hikingResult3").append(newpSummary); 
+
+        var newButton = $("<button>"); 
+        newButton.text("Learn more"); 
+        newButton.attr("class","waves-effect waves-light btn"); 
+        newButton.click(function() {
+          window.open(trail3Link);
+        });
+        $("#hikingResult3").append(newButton);
 
         var trail4Name = hikingResponse.trails[3].name; 
         var trail4Location = hikingResponse.trails[3].location; 
@@ -190,12 +230,52 @@ function showFood() {
         var trail4Length = hikingResponse.trails[3].length; 
         var trail4Link = hikingResponse.trails[3].url;
 
+        var newh5 = $("<h5>");
+        newh5.text(trail4Name); 
+        $("#hikingResult4").append(newh5); 
+
+        var newp = $("<p>");
+        newp.text(trail4Location + " • " + trail4Length + " miles");
+        $("#hikingResult4").append(newp); 
+
+        var newpSummary = $("<p>"); 
+        newpSummary.text(trail4Summary); 
+        $("#hikingResult4").append(newpSummary); 
+
+        var newButton = $("<button>"); 
+        newButton.text("Learn more"); 
+        newButton.attr("class","waves-effect waves-light btn"); 
+        newButton.click(function() {
+          window.open(trail4Link);
+        });
+        $("#hikingResult4").append(newButton);
+
         var trail5Name = hikingResponse.trails[4].name; 
         var trail5Location = hikingResponse.trails[4].location; 
         var trail5Summary = hikingResponse.trails[4].summary; 
         var trail5ImageURL = hikingResponse.trails[4].imgSmall; 
         var trail5Length = hikingResponse.trails[4].length; 
         var trail5Link = hikingResponse.trails[4].url;
+
+        var newh5 = $("<h5>");
+        newh5.text(trail5Name); 
+        $("#hikingResult5").append(newh5); 
+
+        var newp = $("<p>");
+        newp.text(trail5Location + " • " + trail5Length + " miles");
+        $("#hikingResult5").append(newp); 
+
+        var newpSummary = $("<p>"); 
+        newpSummary.text(trail5Summary); 
+        $("#hikingResult5").append(newpSummary); 
+
+        var newButton = $("<button>"); 
+        newButton.text("Learn more"); 
+        newButton.attr("class","waves-effect waves-light btn"); 
+        newButton.click(function() {
+          window.open(trail5Link);
+        });
+        $("#hikingResult5").append(newButton);
 
       }); 
   }); 
@@ -240,7 +320,7 @@ function showEvents() {
     $("#eventResult1").append(newpAddress); 
 
     var time = moment(event1Time, "YYYY-MM-DD HH:mm:ss");
-    var timeFormatted = moment(time).format("M/D/YYYY h:ma")
+    var timeFormatted = moment(time).format("M/D/YYYY h:mma")
 
     var newpTime = $("<p>"); 
     newpTime.text(timeFormatted);
@@ -251,7 +331,7 @@ function showEvents() {
     newButton.text("Learn more"); 
     newButton.attr("class","waves-effect waves-light btn"); 
     newButton.click(function() {
-      window.location=event1URL;
+      window.open(event1URL);
     });
     $("#eventResult1").append(newButton);
 
@@ -266,6 +346,35 @@ function showEvents() {
     var event2VenueCity = $(event2).children("city_name").text();
     var event2Time = $(event2).children("start_time").text();
 
+    var newh5 = $("<h5>");
+    newh5.text(event2Title); 
+    $("#eventResult2").append(newh5); 
+
+    var newp = $("<p>");
+    newp.text(event2Venue);
+    $("#eventResult2").append(newp); 
+
+    var newpAddress = $("<p>"); 
+    newpAddress.text(event2VenueAddress + ", " + event2VenueCity); 
+    $("#eventResult2").append(newpAddress); 
+
+    var time = moment(event2Time, "YYYY-MM-DD HH:mm:ss");
+    var timeFormatted = moment(time).format("M/D/YYYY h:mma")
+
+    var newpTime = $("<p>"); 
+    newpTime.text(timeFormatted);
+    $("#eventResult2").append(newpTime); 
+
+
+    var newButton = $("<button>"); 
+    newButton.text("Learn more"); 
+    newButton.attr("class","waves-effect waves-light btn"); 
+    newButton.click(function() {
+      window.open(event2URL);
+    });
+    $("#eventResult2").append(newButton);
+
+
     var event3 = event2.nextElementSibling; 
 
     var event3Title = $(event3).children("title").text();
@@ -274,6 +383,34 @@ function showEvents() {
     var event3VenueAddress = $(event3).children("venue_address").text();
     var event3VenueCity = $(event3).children("city_name").text();
     var event3Time = $(event3).children("start_time").text();
+
+    var newh5 = $("<h5>");
+    newh5.text(event3Title); 
+    $("#eventResult3").append(newh5); 
+
+    var newp = $("<p>");
+    newp.text(event3Venue);
+    $("#eventResult3").append(newp); 
+
+    var newpAddress = $("<p>"); 
+    newpAddress.text(event3VenueAddress + ", " + event3VenueCity); 
+    $("#eventResult3").append(newpAddress); 
+
+    var time = moment(event3Time, "YYYY-MM-DD HH:mm:ss");
+    var timeFormatted = moment(time).format("M/D/YYYY h:mma")
+
+    var newpTime = $("<p>"); 
+    newpTime.text(timeFormatted);
+    $("#eventResult3").append(newpTime); 
+
+
+    var newButton = $("<button>"); 
+    newButton.text("Learn more"); 
+    newButton.attr("class","waves-effect waves-light btn"); 
+    newButton.click(function() {
+      window.open(event3URL);
+    });
+    $("#eventResult3").append(newButton);
 
     var event4 = event3.nextElementSibling; 
 
@@ -284,6 +421,34 @@ function showEvents() {
     var event4VenueCity = $(event4).children("city_name").text();
     var event4Time = $(event4).children("start_time").text();
 
+    var newh5 = $("<h5>");
+    newh5.text(event4Title); 
+    $("#eventResult4").append(newh5); 
+
+    var newp = $("<p>");
+    newp.text(event4Venue);
+    $("#eventResult4").append(newp); 
+
+    var newpAddress = $("<p>"); 
+    newpAddress.text(event4VenueAddress + ", " + event4VenueCity); 
+    $("#eventResult4").append(newpAddress); 
+
+    var time = moment(event4Time, "YYYY-MM-DD HH:mm:ss");
+    var timeFormatted = moment(time).format("M/D/YYYY h:mma")
+
+    var newpTime = $("<p>"); 
+    newpTime.text(timeFormatted);
+    $("#eventResult4").append(newpTime); 
+
+
+    var newButton = $("<button>"); 
+    newButton.text("Learn more"); 
+    newButton.attr("class","waves-effect waves-light btn"); 
+    newButton.click(function() {
+      window.open(event4URL);
+    });
+    $("#eventResult4").append(newButton);
+
     var event5 = event4.nextElementSibling; 
 
     var event5Title = $(event5).children("title").text();
@@ -292,6 +457,34 @@ function showEvents() {
     var event5VenueAddress = $(event5).children("venue_address").text();
     var event5VenueCity = $(event5).children("city_name").text();
     var event5Time = $(event5).children("start_time").text();
+
+    var newh5 = $("<h5>");
+    newh5.text(event5Title); 
+    $("#eventResult5").append(newh5); 
+
+    var newp = $("<p>");
+    newp.text(event5Venue);
+    $("#eventResult5").append(newp); 
+
+    var newpAddress = $("<p>"); 
+    newpAddress.text(event5VenueAddress + ", " + event5VenueCity); 
+    $("#eventResult5").append(newpAddress); 
+
+    var time = moment(event5Time, "YYYY-MM-DD HH:mm:ss");
+    var timeFormatted = moment(time).format("M/D/YYYY h:mma")
+
+    var newpTime = $("<p>"); 
+    newpTime.text(timeFormatted);
+    $("#eventResult5").append(newpTime); 
+
+
+    var newButton = $("<button>"); 
+    newButton.text("Learn more"); 
+    newButton.attr("class","waves-effect waves-light btn"); 
+    newButton.click(function() {
+      window.open(event5URL);
+    });
+    $("#eventResult5").append(newButton);
   }); 
 }
 
