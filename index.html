@@ -1,206 +1,283 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Document</title>
-  <!-- link to bulma -->
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.8.0/css/bulma.min.css">
-  <script defer src="https://use.fontawesome.com/releases/v5.3.1/js/all.js"></script>
-  <!-- css link -->
-  <link rel="stylesheet" href="style.css">
-  <!-- google font link for logo lively -->
-  <link href="https://fonts.googleapis.com/css?family=Pacifico&display=swap" rel="stylesheet">
-  <!-- google font navbar tabs -->
-  <link href="https://fonts.googleapis.com/css?family=Fredoka+One&display=swap" rel="stylesheet">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>lively</title>
+
+
+
+    <!-- jQuery -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <!-- Compiled and minified CSS -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
+    <!-- css link -->
+    <link rel="stylesheet" href="style.css">
+    <!-- google font link for logo lively -->
+    <link href="https://fonts.googleapis.com/css?family=Pacifico&display=swap" rel="stylesheet">
+    <!-- google font navbar tabs -->
+    <link href="https://fonts.googleapis.com/css?family=Fredoka+One&display=swap" rel="stylesheet">
+
 </head>
+
 <body>
-  <!-- Navbar  -->
-  <nav class="navbar" role="navigation" aria-label="main navigation">
-    <div class="navbar-brand">
-      <strong> <h1 class="logo"> lively </h1></strong>
-      </a>
-      <a role="button" class="navbar-burger burger" aria-label="menu" aria-expanded="false"
-        data-target="navbarBasicExample">
-        <span aria-hidden="true"></span>
-        <span aria-hidden="true"></span>
-        <span aria-hidden="true"></span>
-      </a>
-    </div>
-    <div id="navbarBasicExample" class="navbar-menu">
-      <div class="navbar-start">
-        <a class="navbar-item">
-          Home
-        </a>
-        <a class="navbar-item">
-          Documentation
-        </a>
-        <div class="navbar-item has-dropdown is-hoverable">
-          <a class="navbar-link">
-            More
-          </a>
-          <div class="navbar-dropdown">
-            <a class="navbar-item">
-              About
-            </a>
-            <a class="navbar-item">
-              Jobs
-            </a>
-            <a class="navbar-item">
-              Contact
-            </a>
-            <hr class="navbar-divider">
-            <a class="navbar-item">
-              Report an issue
-            </a>
-          </div>
-        </div>
-      </div>
-      <div class="navbar-end">
-        <div class="navbar-item">
-          <div class="buttons">
-            <a class="button is-light">
-              Log in
-            </a>
-            <a class="button is-light">
-              About us
-            </a>
-            <a class="button is-light">
-              contact
-            </a>
-          </div>
-        </div>
-      </div>
-    </div>
-  </nav>
-  </button>
-  <div id="coverphotocontainer">
-    <section class="section">
-      <div class="container">
-        <!-- <img src="https://images.unsplash.com/photo-1418065460487-3e41a6c84dc5?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=800&q=60" alt="coverphoto"> -->
-        <div class="userInput">
-          <h1 style="text-align: center;"> Are you looking for some fun?</h1>
-          <p style="text-align: center;"> Here at lively, we have gathered some of the best recommendations for you!
-          </p>
-          <p style="text-align: center;"> Enter your city: </p>
-          <form class="pure-form" style="text-align: center;">
-            <input type="text" class="pure-input-rounded">
-            <button type="submit" class="pure-button">Search</button>
-          </form>
-        </div>
-      </div>
-    </section>
-  </div>
-  <div class="columns is-mobile">
-    <div class="column">
-      <div class="card">
-        <div class="card-image">
-          <figure class="image">
-            <img
-              src="https://images.unsplash.com/photo-1571167366136-b57e07761625?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=800&q=60"
-              alt="Placeholder image">
-          </figure>
-        </div>
-        <div class="card-content">
-          <div class="media">
-            <div class="media-content">
-              <p class="title is-4">Food</p>
-              <div class="container" id="app">
-                <p>
-                  <button class="button button-modal" id="showModal" data-API="food">Show</button>
-                </p>
-              </div>
+
+
+
+    <!-- Start Parallax Header -->
+    <header>
+        <nav>
+            <div class="container">
+                <div class="nav-wrapper">
+                    <a href="index.html" class="logo">lively</a>
+
+                </div>
             </div>
-          </div>
-        </div>
-      </div>
+        </nav>
+    </header>
+    <!-- End Parallax Header -->
+
+    <!-- Start Parallax  -->
+    <div class="parallax-container">
+        <div class="parallax"><img
+                src="https://images.unsplash.com/photo-1551632811-561732d1e306?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1650&q=80"
+                class="responsive-img" alt="Parallax"></div>
     </div>
-    <div class="column">
-      <div class="card">
-        <div class="card-image">
-          <figure class="image">
-            <img
-              src="https://images.unsplash.com/photo-1500049242364-5f500807cdd7?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=800&q=60"
-              alt="Placeholder image">
-          </figure>
+
+    <div class="section white">
+        <div class="row container">
+            <h2 class="header">Do You Miss Some fresh air in nature?</h2>
+            <p class="grey-text text-darken-3 lighten-3">lively</p>
         </div>
-        <div class="card-content">
-          <div class="media">
-            <div class="media-content">
-              <p class="title is-4">Hiking</p>
-              <div class="container" id="app">
-                <p>
-                  <button class="button button-modal" id="showModal" data-API="hiking">Show</button>
-                </p>
-              </div>
+
+        <div class="row container">
+            <h4 class="light">Are you looking for an opportunity to explore the wilderness?</h4>
+            <p align="justify">lively</p>
+
+        </div>
+    </div>
+    <!-- Start Parallax  -->
+    <div class="parallax-container">
+        <div class="parallax"><img
+                src="https://images.unsplash.com/photo-1579027989536-b7b1f875659b?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1500&q=80"
+                class="responsive-img" alt="Parallax"></div>
+    </div>
+    <div class="section white">
+        <div class="row container">
+            <h2 class="header">Do you want to have some healthy food with your loved ones?</h2>
+            <p class="grey-text text-darken-3 lighten-3">lively</p>
+        </div>
+        <div class="row container">
+            <h4 class="light">Are you looking for a nice experience for your dine out?</h4>
+            <p align="justify">
+                lively</p>
+        </div>
+    </div>
+    <!-- Start Parallax  -->
+    <div class="parallax-container">
+        <div class="parallax"><img
+                src="https://images.unsplash.com/photo-1508700929628-666bc8bd84ea?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1500&q=80"
+                class="responsive-img" alt="Parallax"></div>
+    </div>
+    <div class="section white">
+        <div class="row container">
+            <h2 class="header">Is lack of time not letting you find events that might interest you?</h2>
+            <p class="grey-text text-darken-3 lighten-3">lively</p>
+        </div>
+        <div class="row container">
+            <h4 class="light">Do you miss to do a fun activity with your friends?</h4>
+            <p align="justify">
+                lively</p>
+        </div>
+    </div>
+
+
+    <!-- Start Parallax  -->
+    <div class="parallax-container">
+        <div class="parallax"><img src="assets/images/Screen Shot 2020-03-24 at 11.13.26 PM.png" class="responsive-img"
+                alt="Parallax"></div>
+    </div>
+    <div class="section white">
+        <div class="row container">
+            <h2 class="header">if yes, you are at the right place!</h2>
+            <p class="grey-text text-darken-3 lighten-3">lively</p>
+        </div>
+        <div class="row container">
+
+            <h4 class="light">Here at lively, we have gathered some of the best recommendations for you!</h4>
+            <p align="justify">
+                Enter your city:</p>
+            <div class="row">
+                <form action="" method="post">
+                    <div class="input-field col s6">
+                        <input value="Seattle" id="your-city" type="text" class="validate">
+                        <label class="active" for="your-city">Your City</label>
+                    </div>
+                </form>
             </div>
-          </div>
+
         </div>
-      </div>
     </div>
-    <div class="column">
-      <div class="card">
-        <div class="card-image">
-          <figure class="image">
-            <img
-              src="https://images.unsplash.com/flagged/photo-1574097113271-197a575f0d22?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=800&q=60"
-              alt="Placeholder image">
-          </figure>
-        </div>
-        <div class="card-content">
-          <div class="media">
-            <div class="media-content">
-              <p class="title is-4">Events</p>
-              <div class="container" id="app">
-                <p>
-                  <button class="button button-modal" id="showModal" data-API="events" >Show</button>
-                </p>
-              </div>
+
+    <div class="parallax-container">
+        <div class="parallax"><img src="assets/images/Screen Shot 2020-03-24 at 11.13.26 PM.png" class="responsive-img"
+                alt="Parallax"></div>
+    </div>
+    <!-- End Parallax  -->
+
+
+    <!-- results buttons on cards -->
+    <div class="section white">
+
+        <div class="row">
+            <div class="col s12 m6 l4">
+                <div class="card">
+                    <div class="card-image">
+                        <img
+                            src="https://images.unsplash.com/photo-1573331592635-f658507c1e8c?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=800&q=60">
+                        <span class="card-title">Hiking</span>
+                    </div>
+                    <div class="card-content">
+                        <a class="waves-effect waves-light btn">button</a>
+
+                    </div>
+
+                </div>
             </div>
-          </div>
         </div>
-      </div>
-    </div>
-  </div>
-  <div class="aboutUs">
-    pictures of the four of us
-  </div>
-  <div class="modal">
-    <div class="modal-background"></div>
-    <div class="modal-content">
-      <!-- Any other Bulma elements you want -->
-      <table>
-        <tr>
-          <td>Results</td>
-          <td>Hi</td>
-        </tr>
-      </table>
-    </div>
-    <button class="modal-close"></button>
-  </div>
-  <footer class="footer">
-    <div class="field is-horizontal">
-      <div class="field-label is-normal">
-        <label class="label">To</label>
-      </div>
-      <div class="field-body">
-        <div class="field">
-          <p class="control">
-            <input class="input" type="email" placeholder="Recipient email">
-          </p>
+        <div class="row">
+            <div class="col l4">
+                <div class="card">
+                    <div class="card-image">
+                        <img
+                            src="https://images.unsplash.com/photo-1498837167922-ddd27525d352?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1500&q=80">
+                        <span class="card-title">Food
+                            <a class="waves-effect waves-light btn">button</a>
+
+                        </span>
+                    </div>
+                    <div class="card-content">
+                        <a class="waves-effect waves-light btn">button</a>
+
+                    </div>
+
+                </div>
+            </div>
+            <div class="col l4">
+                <div class="card">
+                    <div class="card-image">
+                        <img
+                            src="https://images.unsplash.com/photo-1498837167922-ddd27525d352?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1500&q=80">
+                        <span class="card-title">Food
+                            <a class="waves-effect waves-light btn">button</a>
+
+                        </span>
+                    </div>
+                    <div class="card-content">
+                        <a class="waves-effect waves-light btn">button</a>
+
+                    </div>
+
+                </div>
+            </div>
         </div>
-      </div>
+        <div class="row">
+            <div class="col s12 m6 l4">
+                <div class="card">
+                    <div class="card-image">
+                        <img
+                            src="https://images.unsplash.com/photo-1563545137986-0b1a2d2bcd8d?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1500&q=80">
+                        <span class="card-title">Events</span>
+                    </div>
+                    <div class="card-content">
+                        <a class="waves-effect waves-light btn">button</a>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+
+
     </div>
-    <div class="content has-text-centered">
-      <p>
-        <strong class="logo">lively</strong> by <strong>Team 2</strong>
-      </p>
-    </div>
-  </footer>
-  <!-- jQuery link -->
-  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
-  <!-- javascript link -->
-  <script src="script.js"></script>
+
+
+    <!-- footer -->
+    <footer class="page-footer">
+        <div class="row">
+            <div class="col l6 m6 s12">
+                <h5 class="white-text">About Us</h5>
+                <p class="grey-text text-lighten-4">
+                    Team 2 ( Zahra Megan Eden and Yuri)
+                </p>
+            </div>
+            <div class="col l3 m3 s12">
+                <h6 class="white-text">Front-End Tutorials</h6>
+                <ul>
+                    <li><a class="grey-text text-lighten-3" href="#!">HTML5</a></li>
+                    <li><a class="grey-text text-lighten-3" href="#!">CSS3</a></li>
+                    <li><a class="grey-text text-lighten-3" href="#!">Bootstrap 3</a></li>
+                    <li><a class="grey-text text-lighten-3" href="#!">Bootstrap 4</a></li>
+                    <li><a class="grey-text text-lighten-3" href="#!">Material Design</a></li>
+                </ul>
+            </div>
+            <div class="col l3 m3 s12">
+                <h6 class="white-text">Back-End Tutorials</h6>
+                <ul>
+                    <li><a class="grey-text text-lighten-3" href="#!">Java</a></li>
+                    <li><a class="grey-text text-lighten-3" href="#!">Microsoft .NET</a></li>
+                    <li><a class="grey-text text-lighten-3" href="#!">PHP/MySQL</a></li>
+                    <li><a class="grey-text text-lighten-3" href="#!">Python</a></li>
+                    <li><a class="grey-text text-lighten-3" href="#!">Ruby on Rails</a></li>
+                </ul>
+            </div>
+        </div>
+        <div class="footer-copyright">
+            <div class="col l6 m6 s12">&copy; 2020 Copyright <a class="white-text text-lighten-4" href=""
+                    target="_blank">lively</a></div>
+
+            <div class="col l6 m6 s12"><a class="grey-text text-lighten-4 right" href="http://www.freetimelearning.com/"
+                    target="_blank">Designed By Passionate Developers</a></div>
+        </div>
+    </footer>
+
+
+
+
+
+
+
+
+
+
+    <!-- Start Parallax Javascript -->
+    <script type="text/javascript">
+        $(document).ready(function () {
+            $('.parallax').parallax();
+        });
+    </script>
+    <!-- EndParallax Javascript -->
+
+
+
+
+
+
+    <!-- jQuery link -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+
+    <!-- Compiled and minified JavaScript -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+    <!-- link to js -->
+    <script src="script.js"></script>
+
 </body>
+
 </html>
+
+
+
+
+
+
+
