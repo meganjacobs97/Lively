@@ -56,7 +56,6 @@ function showFood() {
       });
     }
 
-<<<<<<< HEAD
     // document.addEventListener('DOMContentLoaded', function() {
     //   var elems = document.querySelectorAll('.parallax');
     //   var instances = M.Parallax.init(elems, options);
@@ -68,8 +67,6 @@ function showFood() {
     //   $('.parallax').parallax();
     // });
       
-=======
->>>>>>> development
 
     
 
@@ -115,7 +112,8 @@ function showFood() {
 
 
 
-
+    showHiking(); 
+    showEvents(); 
 
 
   function showHiking() {
@@ -150,6 +148,26 @@ function showFood() {
         var trail1ImageURL = hikingResponse.trails[0].imgSmall; 
         var trail1Length = hikingResponse.trails[0].length; 
         var trail1Link = hikingResponse.trails[0].url; 
+
+        var newh5 = $("<h5>");
+        newh5.text(trail1Name); 
+        $("#hikingResult1").append(newh5); 
+
+        var newp = $("<p>");
+        newp.text(trail1Location + " • " + trail1Length + " miles");
+        $("#hikingResult1").append(newp); 
+
+        var newpSummary = $("<p>"); 
+        newpSummary.text(trail1Summary); 
+        $("#hikingResult1").append(newpSummary); 
+
+        var newButton = $("<button>"); 
+        newButton.text("Learn more"); 
+        newButton.attr("class","waves-effect waves-light btn"); 
+        newButton.click(function() {
+          window.location=trail1Link;
+        });
+        $("#hikingResult1").append(newButton);
 
         var trail2Name = hikingResponse.trails[1].name; 
         var trail2Location = hikingResponse.trails[1].location; 
@@ -208,6 +226,36 @@ function showEvents() {
     var event1VenueAddress = $(event1).children("venue_address").text();
     var event1VenueCity = $(event1).children("city_name").text();
     var event1Time = $(event1).children("start_time").text();
+
+    var newh5 = $("<h5>");
+    newh5.text(event1Title); 
+    $("#eventResult1").append(newh5); 
+
+    var newp = $("<p>");
+    newp.text(event1Venue);
+    $("#eventResult1").append(newp); 
+
+    var newpAddress = $("<p>"); 
+    newpAddress.text(event1VenueAddress + ", " + event1VenueCity); 
+    $("#eventResult1").append(newpAddress); 
+
+    var time = moment(event1Time, "YYYY-MM-DD HH:mm:ss");
+    var timeFormatted = moment(time).format("M/D/YYYY h:ma")
+
+    var newpTime = $("<p>"); 
+    newpTime.text(timeFormatted);
+    $("#eventResult1").append(newpTime); 
+
+
+    var newButton = $("<button>"); 
+    newButton.text("Learn more"); 
+    newButton.attr("class","waves-effect waves-light btn"); 
+    newButton.click(function() {
+      window.location=event1URL;
+    });
+    $("#eventResult1").append(newButton);
+
+
 
     var event2 = event1.nextElementSibling; 
 
