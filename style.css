@@ -3,12 +3,11 @@ body{
 }
 
 header{
+z-index: 1000;
 position: fixed;
 top:  0;
 left: 0;
 width: 100%;
-
-
 }
 /* this color is not working */
 .navbar{
@@ -21,12 +20,7 @@ width: 100%;
   font-size: 28px;
 }
 
-#coverphotocontainer{
-  background-image: "https://images.unsplash.com/photo-1418065460487-3e41a6c84dc5?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=800&q=60" ;
-  width:100%;
-  height: 500px;
-  
-}
+
 
 .userInput{
 color: white;
@@ -41,4 +35,3 @@ color: white;
 .footer{
   background-color: rgb(43, 3, 39);
 }
-
