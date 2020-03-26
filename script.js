@@ -66,6 +66,8 @@ function showHiking() {
       var trail1ImageURL = hikingResponse.trails[0].imgSmall;
       var trail1Length = hikingResponse.trails[0].length;
       var trail1Link = hikingResponse.trails[0].url;
+      
+      $("#hikingResult1").removeClass("hidden"); 
 
       var newh5 = $("<h5>");
       newh5.text(trail1Name);
@@ -94,6 +96,8 @@ function showHiking() {
       var trail2Length = hikingResponse.trails[1].length;
       var trail2Link = hikingResponse.trails[1].url;
 
+      $("#hikingResult2").removeClass("hidden"); 
+
       var newh5 = $("<h5>");
       newh5.text(trail2Name);
       $("#hikingResult2").append(newh5);
@@ -120,6 +124,8 @@ function showHiking() {
       var trail3ImageURL = hikingResponse.trails[2].imgSmall;
       var trail3Length = hikingResponse.trails[2].length;
       var trail3Link = hikingResponse.trails[2].url;
+
+      $("#hikingResult3").removeClass("hidden"); 
 
       var newh5 = $("<h5>");
       newh5.text(trail3Name);
@@ -148,6 +154,8 @@ function showHiking() {
       var trail4Length = hikingResponse.trails[3].length;
       var trail4Link = hikingResponse.trails[3].url;
 
+      $("#hikingResult4").removeClass("hidden"); 
+
       var newh5 = $("<h5>");
       newh5.text(trail4Name);
       $("#hikingResult4").append(newh5);
@@ -174,6 +182,8 @@ function showHiking() {
       var trail5ImageURL = hikingResponse.trails[4].imgSmall;
       var trail5Length = hikingResponse.trails[4].length;
       var trail5Link = hikingResponse.trails[4].url;
+
+      $("#hikingResult5").removeClass("hidden"); 
 
       var newh5 = $("<h5>");
       newh5.text(trail5Name);
@@ -218,8 +228,9 @@ function showEvents() {
       $(elID).empty(); 
 
     }
-
+    
     var event1 = eventfulResponse.firstChild.lastElementChild.firstElementChild;
+    
 
     var event1Title = $(event1).children("title").text();
     var event1URL = $(event1).children("url").text();
@@ -227,6 +238,8 @@ function showEvents() {
     var event1VenueAddress = $(event1).children("venue_address").text();
     var event1VenueCity = $(event1).children("city_name").text();
     var event1Time = $(event1).children("start_time").text();
+
+    $("#eventResult1").removeClass("hidden"); 
 
     var newh5 = $("<h5>");
     newh5.text(event1Title);
@@ -267,6 +280,8 @@ function showEvents() {
     var event2VenueCity = $(event2).children("city_name").text();
     var event2Time = $(event2).children("start_time").text();
 
+    $("#eventResult2").removeClass("hidden"); 
+
     var newh5 = $("<h5>");
     newh5.text(event2Title);
     $("#eventResult2").append(newh5);
@@ -305,6 +320,8 @@ function showEvents() {
     var event3VenueCity = $(event3).children("city_name").text();
     var event3Time = $(event3).children("start_time").text();
 
+    $("#eventResult3").removeClass("hidden"); 
+
     var newh5 = $("<h5>");
     newh5.text(event3Title);
     $("#eventResult3").append(newh5);
@@ -342,6 +359,8 @@ function showEvents() {
     var event4VenueCity = $(event4).children("city_name").text();
     var event4Time = $(event4).children("start_time").text();
 
+    $("#eventResult4").removeClass("hidden"); 
+
     var newh5 = $("<h5>");
     newh5.text(event4Title);
     $("#eventResult4").append(newh5);
@@ -378,6 +397,8 @@ function showEvents() {
     var event5VenueAddress = $(event5).children("venue_address").text();
     var event5VenueCity = $(event5).children("city_name").text();
     var event5Time = $(event5).children("start_time").text();
+
+    $("#eventResult5").removeClass("hidden"); 
 
     var newh5 = $("<h5>");
     newh5.text(event5Title);
@@ -512,6 +533,9 @@ function showFood() {
             // console.log("")
 
             j = i+1;
+
+            //show div
+            $("#foodResult" + j).removeClass("hidden"); 
 
             var newh5 = $("<h5>");
             newh5.text(data.restaurants[i].restaurant.name);
