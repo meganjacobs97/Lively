@@ -18,143 +18,207 @@ function searchCity() {
 
 
 function showHiking() {
-  
-  //MAP call to get lon and lat for hiking 
+  //if they clicked the button to hide the results 
+  if($("#hikingbutton").text() === "Hide") {
+    //empty out divs 
+    for(var i = 1; i < 6; i++) {
+      //grab element to hide 
+      var elID = "#hikingResult" + i; 
 
-  //if two word city, need to replace space with a plus sign 
-  var mapsKey = "AIzaSyAsQJipmAbkxBxkMoKKTeQlXIYHKBAeiQA";
-  var mapsURL = "https://maps.googleapis.com/maps/api/geocode/json?address=" + cityName + "&key=" + mapsKey;
+      //hide
+      $(elID).addClass("hidden"); 
+    }
+    //set text to show 
+    $("#hikingbutton").text("Show");
+  } 
+  else {
+    //check to see if we already did the search
+    //if we havent 
+    if(!$("#hikingResult1").is(':empty')) {
+      //do the search
+      //MAP call to get lon and lat for hiking 
 
-  $.ajax({
-    url: mapsURL,
-    method: "GET"
-  }).then(function (mapsResponse) {
-    console.log(mapsResponse);
-    var lat = mapsResponse.results[0].geometry.location.lat;
-    var lon = mapsResponse.results[0].geometry.location.lng;
+      //if two word city, need to replace space with a plus sign 
+      var mapsKey = "AIzaSyAsQJipmAbkxBxkMoKKTeQlXIYHKBAeiQA";
+      var mapsURL = "https://maps.googleapis.com/maps/api/geocode/json?address=" + cityName + "&key=" + mapsKey;
 
-    //hiking ajax call - will want to put this call inside weather call, which will provide lat and long 
-    var hikingKey = "200711521-6e472fe6d7868e96f3ed6374e0204664";
+      $.ajax({
+        url: mapsURL,
+        method: "GET"
+      }).then(function (mapsResponse) {
+        console.log(mapsResponse);
+        var lat = mapsResponse.results[0].geometry.location.lat;
+        var lon = mapsResponse.results[0].geometry.location.lng;
 
-    var hikingURL = "https://www.hikingproject.com/data/get-trails?lat=" + lat + "&lon=" + lon + "&key=" + hikingKey;
-    $.ajax({
-      url: hikingURL,
-      method: "GET"
-    }).then(function (hikingResponse) {
-      console.log(hikingResponse);
+        //hiking ajax call - will want to put this call inside weather call, which will provide lat and long 
+        var hikingKey = "200711521-6e472fe6d7868e96f3ed6374e0204664";
 
-      for(var i = 1; i < 6; i++) {
-        //for index of hikingResponse array
-        var j = i - 1; 
-        
-        //grab element to append info to 
-        var elID = "#hikingResult" + i; 
+        var hikingURL = "https://www.hikingproject.com/data/get-trails?lat=" + lat + "&lon=" + lon + "&key=" + hikingKey;
+        $.ajax({
+          url: hikingURL,
+          method: "GET"
+        }).then(function (hikingResponse) {
+          console.log(hikingResponse);
 
-        //grab information response 
-        var name = hikingResponse.trails[j].name;
-        var location = hikingResponse.trails[j].location;
-        var summary = hikingResponse.trails[j].summary;
-        var imageURL = hikingResponse.trails[j].imgSmall;
-        var length = hikingResponse.trails[j].length;
-        var link = hikingResponse.trails[j].url;
+          for(var i = 1; i < 6; i++) {
+            //for index of hikingResponse array
+            var j = i - 1; 
+            
+            //grab element to append info to 
+            var elID = "#hikingResult" + i; 
 
-        //empty div in case show button was already clicked
-        $(elID).empty(); 
+            //grab information response 
+            var name = hikingResponse.trails[j].name;
+            var location = hikingResponse.trails[j].location;
+            var summary = hikingResponse.trails[j].summary;
+            var imageURL = hikingResponse.trails[j].imgSmall;
+            var length = hikingResponse.trails[j].length;
+            var link = hikingResponse.trails[j].url;
 
-        //show div
-        $(elID).removeClass("hidden"); 
+            //empty div in case show button was already clicked
+            $(elID).empty(); 
 
-        //create element, add text, then append 
-        var newh5 = $("<h5>");
-        newh5.text(name);
-        $(elID).append(newh5);
+            //show div
+            $(elID).removeClass("hidden"); 
 
-        var newp = $("<p>");
-        newp.text(location + " • " + length + " miles");
-        $(elID).append(newp);
+            //create element, add text, then append 
+            var newh5 = $("<h5>");
+            newh5.text(name);
+            $(elID).append(newh5);
 
-        var newpSummary = $("<p>");
-        newpSummary.text(summary);
-        $(elID).append(newpSummary);
+            var newp = $("<p>");
+            newp.text(location + " • " + length + " miles");
+            $(elID).append(newp);
 
-        var newButton = $("<button>");
-        newButton.text("Learn more");
-        newButton.attr("class", "waves-effect waves-light btn");
-        //add event listener to button 
-        newButton.click(function () {
-          window.open(link);
+            var newpSummary = $("<p>");
+            newpSummary.text(summary);
+            $(elID).append(newpSummary);
+
+            var newButton = $("<button>");
+            newButton.text("Learn more");
+            newButton.attr("class", "waves-effect waves-light btn");
+            //add event listener to button 
+            newButton.click(function () {
+              window.open(link);
+            });
+            $(elID).append(newButton);
+
+          }
         });
-        $(elID).append(newButton);
-
+      });
+    }
+    //if we have done the search, just show previous results 
+    else {
+      //just show 
+      for(var i = 1; i < 6; i++) {
+        //grab element to hide 
+        var elID = "#hikingResult" + i; 
+  
+        //show
+        $(elID).removeClass("hidden"); 
       }
-    });
-  });
+    }
+    //set text to hide 
+    $("#hikingbutton").text("Hide");
+  }
 }
 
-
+//eventful ajax call
 function showEvents() {
-  //eventful ajax call
-  
-  var eventfulKey = "S2Nw4XHRLF4k2Hsz";
-  // use herokuapp to fix CORS issue 
-  var eventfulQueryURL = "https://cors-anywhere.herokuapp.com/http://api.eventful.com/rest/events/search?...&location=" + cityName + "&date=Future" + "&app_key=" + eventfulKey;
-  $.ajax({
-    url: eventfulQueryURL,
-    method: "GET"
-  }).then(function (eventfulResponse) {
-    //first event 
-    var event = eventfulResponse.firstChild.lastElementChild.firstElementChild;
-    for(var i = 1; i < 6; i++) { 
-      //grab element to append info to 
+  //if they clicked the button to hide the results 
+  if($("#eventsbutton").text() === "Hide") {
+    //empty out divs 
+    for(var i = 1; i < 6; i++) {
+      //grab element to hide 
       var elID = "#eventResult" + i; 
 
-      //empty div
-      $(elID).empty(); 
-      //show div
-      $(elID).removeClass("hidden"); 
-
-      //grab information response 
-      var title = $(event).children("title").text();
-      var link = $(event).children("url").text();
-      var venue = $(event).children("venue_name").text();
-      var venueAddress = $(event).children("venue_address").text();
-      var venueCity = $(event).children("city_name").text();
-      var eventTime = $(event).children("start_time").text();
-
-      //create element, add text, then append
-      var newh5 = $("<h5>");
-      newh5.text(title);
-      $(elID).append(newh5);
-
-      var newp = $("<p>");
-      newp.text(venue);
-      $(elID).append(newp);
-
-      var newpAddress = $("<p>");
-      newpAddress.text(venueAddress + ", " + venueCity);
-      $(elID).append(newpAddress);
-
-      //format time using moment
-      var time = moment(eventTime, "YYYY-MM-DD HH:mm:ss");
-      var timeFormatted = moment(time).format("M/D/YYYY h:mma")
-
-      var newpTime = $("<p>");
-      newpTime.text(timeFormatted);
-      $(elID).append(newpTime);
-
-      var newButton = $("<button>");
-      newButton.text("Learn more");
-      newButton.attr("class", "waves-effect waves-light btn");
-      //add button event listener
-      newButton.click(function () {
-        window.open(link);
-      });
-      $(elID).append(newButton);
-
-      //go to next event 
-      event = event.nextElementSibling; 
+      //hide
+      $(elID).addClass("hidden"); 
     }
-  });
+    //set text to show 
+    $("#eventsbutton").text("Show");
+  } 
+  else {
+    //check to see if we already did the search
+    //if we havent 
+    if(!$("#eventResult1").is(':empty')) {
+      //do the search
+  
+      var eventfulKey = "S2Nw4XHRLF4k2Hsz";
+      // use herokuapp to fix CORS issue 
+      var eventfulQueryURL = "https://cors-anywhere.herokuapp.com/http://api.eventful.com/rest/events/search?...&location=" + cityName + "&date=Future" + "&app_key=" + eventfulKey;
+      $.ajax({
+        url: eventfulQueryURL,
+        method: "GET"
+      }).then(function (eventfulResponse) {
+        //first event 
+        var event = eventfulResponse.firstChild.lastElementChild.firstElementChild;
+        for(var i = 1; i < 6; i++) { 
+          //grab element to append info to 
+          var elID = "#eventResult" + i; 
+
+          //empty div
+          $(elID).empty(); 
+          //show div
+          $(elID).removeClass("hidden"); 
+
+          //grab information response 
+          var title = $(event).children("title").text();
+          var link = $(event).children("url").text();
+          var venue = $(event).children("venue_name").text();
+          var venueAddress = $(event).children("venue_address").text();
+          var venueCity = $(event).children("city_name").text();
+          var eventTime = $(event).children("start_time").text();
+
+          //create element, add text, then append
+          var newh5 = $("<h5>");
+          newh5.text(title);
+          $(elID).append(newh5);
+
+          var newp = $("<p>");
+          newp.text(venue);
+          $(elID).append(newp);
+
+          var newpAddress = $("<p>");
+          newpAddress.text(venueAddress + ", " + venueCity);
+          $(elID).append(newpAddress);
+
+          //format time using moment
+          var time = moment(eventTime, "YYYY-MM-DD HH:mm:ss");
+          var timeFormatted = moment(time).format("M/D/YYYY h:mma")
+
+          var newpTime = $("<p>");
+          newpTime.text(timeFormatted);
+          $(elID).append(newpTime);
+
+          var newButton = $("<button>");
+          newButton.text("Learn more");
+          newButton.attr("class", "waves-effect waves-light btn");
+          //add button event listener
+          newButton.click(function () {
+            window.open(link);
+          });
+          $(elID).append(newButton);
+
+          //go to next event 
+          event = event.nextElementSibling; 
+        }
+      });
+    }
+    //if we have done the search, just show previous results 
+    else {
+      //just show 
+      for(var i = 1; i < 6; i++) {
+        //grab element 
+        var elID = "#eventResult" + i; 
+
+        //show
+        $(elID).removeClass("hidden"); 
+      }
+    }
+    //set text to hide 
+    $("#eventsbutton").text("Hide");
+  }
 }
 
 
@@ -210,86 +274,119 @@ function showWeather() {
 
 function showFood() {
 
-  var foodKey = "e6b865792885e0c46ec11c9c6a86dd32";
-  var foodURL = "https://developers.zomato.com/api/v2.1/locations?query=" + cityName;
-  var cityID;
+  //if they clicked the button to hide the results 
+  if($("#foodbutton").text() === "Hide") {
+    //empty out divs 
+    for(var i = 1; i < 6; i++) {
+      //grab element to hide 
+      var elID = "#foodResult" + i; 
 
-  $.ajax({
-    type: "GET",
-    headers: {
-      'X-Zomato-API-Key': foodKey
-    },
-    url: foodURL,
-    dataType: 'json',
-    processData: true,
-  }).then(function (data) {
-    
-    // console.log(data);
+      //hide
+      $(elID).addClass("hidden"); 
+    }
+    //set text to show 
+    $("#foodbutton").text("Show");
+  } 
+  else {
+    //check to see if we already did the search
+    //if we havent 
+    if(!$("#foodResult1").is(':empty')) {
+      //do the search
+        var foodKey = "e6b865792885e0c46ec11c9c6a86dd32";
+        var foodURL = "https://developers.zomato.com/api/v2.1/locations?query=" + cityName;
+        var cityID;
+
+        $.ajax({
+          type: "GET",
+          headers: {
+            'X-Zomato-API-Key': foodKey
+          },
+          url: foodURL,
+          dataType: 'json',
+          processData: true,
+        }).then(function (data) {
+          
+          // console.log(data);
 
 
-    console.log(data.location_suggestions[0].title + " (id = " + data.location_suggestions[0].city_id + ")")
-    console.log("")
-    cityID = data.location_suggestions[0].city_id // cityID is used on next ajax call
-    var searchURL = "https://developers.zomato.com/api/v2.1/search?entity_id=" + cityID + "&entity_type=city&sort=rating" // maybe only search
+          console.log(data.location_suggestions[0].title + " (id = " + data.location_suggestions[0].city_id + ")")
+          console.log("")
+          cityID = data.location_suggestions[0].city_id // cityID is used on next ajax call
+          var searchURL = "https://developers.zomato.com/api/v2.1/search?entity_id=" + cityID + "&entity_type=city&sort=rating" // maybe only search
 
-    $.ajax({
-      type: "GET",
-      headers: {
-        'X-Zomato-API-Key': foodKey
-      },
-      url: searchURL, // search
-      dataType: 'json',
+          $.ajax({
+            type: "GET",
+            headers: {
+              'X-Zomato-API-Key': foodKey
+            },
+            url: searchURL, // search
+            dataType: 'json',
 
-      processData: true,
-    }).then(function (data) {
+            processData: true,
+          }).then(function (data) {
 
-        for (let i = 0; i < 5; i++) {
+            for (let i = 0; i < 5; i++) {
 
-            // console.log(data.restaurants[i])
-            // console.log(data.restaurants[i].restaurant.name)
-            // console.log(data.restaurants[i].restaurant.establishment[0])
-            // console.log(data.restaurants[i].restaurant.cuisines)
-            // console.log("img: " + data.restaurants[i].restaurant.featured_image)
-            // console.log("url: " + data.restaurants[i].restaurant.url)
-            // console.log(data.restaurants[i].restaurant.location.address + ", " + data.restaurants[i].restaurant.location.locality)
-            // console.log("")
+              // console.log(data.restaurants[i])
+              // console.log(data.restaurants[i].restaurant.name)
+              // console.log(data.restaurants[i].restaurant.establishment[0])
+              // console.log(data.restaurants[i].restaurant.cuisines)
+              // console.log("img: " + data.restaurants[i].restaurant.featured_image)
+              // console.log("url: " + data.restaurants[i].restaurant.url)
+              // console.log(data.restaurants[i].restaurant.location.address + ", " + data.restaurants[i].restaurant.location.locality)
+              // console.log("")
 
-           
-            // empty divs in case there is content in them and then show 
             
-            
-            j = i+1;
+              // empty divs in case there is content in them and then show 
+              
+              
+              j = i+1;
 
-            //empty div
-            $("#foodResult" + j).empty(); 
-            //show div
-            $("#foodResult" + j).removeClass("hidden"); 
+              //empty div
+              $("#foodResult" + j).empty(); 
+              //show div
+              $("#foodResult" + j).removeClass("hidden"); 
 
-            var newh5 = $("<h5>");
-            newh5.text(data.restaurants[i].restaurant.name);
-            $("#foodResult" + j).append(newh5);
+              var newh5 = $("<h5>");
+              newh5.text(data.restaurants[i].restaurant.name);
+              $("#foodResult" + j).append(newh5);
 
-            var newp = $("<p>");
-            newp.text(data.restaurants[i].restaurant.establishment[0]);
-            $("#foodResult" + j).append(newp);
+              var newp = $("<p>");
+              newp.text(data.restaurants[i].restaurant.establishment[0]);
+              $("#foodResult" + j).append(newp);
 
-            var newp2 = $("<p>");
-            newp2.text(data.restaurants[i].restaurant.cuisines);
-            $("#foodResult" + j).append(newp2);
+              var newp2 = $("<p>");
+              newp2.text(data.restaurants[i].restaurant.cuisines);
+              $("#foodResult" + j).append(newp2);
 
-            var newp3 = $("<p>");
-            newp3.text(data.restaurants[i].restaurant.location.address + ", " + data.restaurants[i].restaurant.location.locality);
-            $("#foodResult" + j).append(newp3);
+              var newp3 = $("<p>");
+              newp3.text(data.restaurants[i].restaurant.location.address + ", " + data.restaurants[i].restaurant.location.locality);
+              $("#foodResult" + j).append(newp3);
 
-            var newButton = $("<button>");
-            newButton.text("Learn more");
-            newButton.attr("class", "waves-effect waves-light btn");
-            newButton.click(function () {
-            window.open(data.restaurants[i].restaurant.url);
-            });
-            $("#foodResult" + j).append(newButton);
+              var newButton = $("<button>");
+              newButton.text("Learn more");
+              newButton.attr("class", "waves-effect waves-light btn");
+              newButton.click(function () {
+              window.open(data.restaurants[i].restaurant.url);
+              });
+              $("#foodResult" + j).append(newButton);
 
+              }
+          });
+        });
+      }
+      //if we have done the search, just show previous results 
+      else {
+        //just show 
+        for(var i = 1; i < 6; i++) {
+          //grab element 
+          var elID = "#foodResult" + i; 
+
+          //show
+          $(elID).removeClass("hidden"); 
         }
-    });
-  });
+      }
+      //set text to hide 
+      $("#foodbutton").text("Hide");
+  }
 }
