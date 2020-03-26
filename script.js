@@ -19,6 +19,10 @@ function searchCity() {
   cityName = $("#your-city").val().trim()
   cityName = cityName.replace(" ", "+")
   cityName = cityName.toLowerCase()
+  //if no search, give a default 
+  if(!cityName) {
+    cityName = "Seattle"; 
+  }
   // showHiking();
   // showEvents();
   // showFood();
