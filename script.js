@@ -23,8 +23,6 @@ function searchCity() {
   // showEvents();
   // showFood();
   showWeather();
-
-
 }
 
 
@@ -113,24 +111,16 @@ function showEvents() {
     url: eventfulQueryURL,
     method: "GET"
   }).then(function (eventfulResponse) {
-    console.log(eventfulResponse);
-    
-
-    // empty divs in case there is content in them 
-    for(var i = 1; i < 6; i++) {
+    //first event 
+    var event = eventfulResponse.firstChild.lastElementChild.firstElementChild;
+    for(var i = 1; i < 6; i++) { 
+      //grab element to append info to 
       var elID = "#eventResult" + i; 
+
+      //empty div
       $(elID).empty(); 
       //show div
       $(elID).removeClass("hidden"); 
-    }
-
-    //first event 
-    var event = eventfulResponse.firstChild.lastElementChild.firstElementChild;
-    for(var i = 1; i < 6; i++) {
-      console.log(i); 
-          
-      //grab element to append info to 
-      var elID = "#eventResult" + i; 
 
       //grab information response 
       var title = $(event).children("title").text();
