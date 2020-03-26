@@ -28,6 +28,9 @@ width: 100%;
   color: black;
 }
 
+.hidden {
+  display: none; 
+}
 
 
 .userInput{
