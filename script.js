@@ -1,12 +1,13 @@
-var cityName;
+//default value
+var cityName = "Seattle";
 
 function searchCity() {
-
   event.preventDefault();
   cityName = $("#your-city").val().trim()
   cityName = cityName.replace(" ", "+")
   cityName = cityName.toLowerCase()
   //if no search, give a default 
+  debugger;
   if(!cityName) {
     cityName = "Seattle"; 
   }
