@@ -46,28 +46,30 @@
         src="https://images.unsplash.com/photo-1551632811-561732d1e306?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1650&q=80"
         class="responsive-img" alt="Parallax"></div>
   </div>
-  <div class="section deep-purple lighten-5">
-    <div class="prompt">
-      <div class="row container">
-  
-        <h2 class="header">Are you looking to have some fun ?</h2>
-        <p class="grey-text text-darken-3 lighten-3">You are at the right place.</p>
+
+  <div class="section white">
+    <div class="row container">
+
+      <h2 class="header">Are you looking to have some fun ?</h2>
+      <p class="grey-text text-darken-3 lighten-3">You are at the right place.</p>
+    </div>
+    <div class="row container">
+
+      <h4 class="light">Here at lively, we have gathered some of the best recommendations for you!</h4>
+      <p align="justify">
+        Enter your city:</p>
+      <div class="row">
+        <form action="" method="post">
+          <div class="input-field col s6">
+            <input value="Seattle" id="your-city" type="text" class="validate">
+            <button id="searchBtn" onclick="searchCity()">Search</button>
+            <label class="active" for="your-city">Your City</label>
+          </div>
+        </form>
       </div>
-      <div class="row container">
-  
-        <h4 class="light">Here at lively, we have gathered some of the best recommendations for you!</h4>
-        <p align="justify">
-          Enter your city:</p>
-        <div class="row">
-          <form action="" method="post">
-            <div class="input-field col s6">
-              <input value="Seattle" id="your-city" type="text" class="validate">
-              <label class="active" for="your-city">Your City</label>
-            </div>
-          </form>
-        </div>
-  
-      </div>
+      <div id="weather"></div>
+
+
     </div>
   </div>
 
@@ -90,7 +92,7 @@
               <span class="card-title">Hiking</span>
             </div>
             <div class="card-content">
-              <a class="waves-effect waves-light btn">button</a>
+              <a class="waves-effect waves-light btn" onclick="showHiking()">button</a>
 
             </div>
 
@@ -144,7 +146,7 @@
                 </span>
               </div>
               <div class="card-content">
-                <a class="waves-effect waves-light btn">button</a>
+                <a class="waves-effect waves-light btn" onclick="showFood()">button</a>
   
               </div>
   
@@ -197,7 +199,7 @@
                 <span class="card-title">Events</span>
               </div>
               <div class="card-content">
-                <a class="waves-effect waves-light btn">button</a>
+                <a class="waves-effect waves-light btn" onclick="showEvents()">button</a>
   
               </div>
             </div>
@@ -247,8 +249,6 @@
         class="responsive-img" alt="Parallax"></div>
   </div>
   <!-- End Parallax  -->
-
-
 
 
 
