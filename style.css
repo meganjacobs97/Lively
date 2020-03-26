@@ -20,7 +20,9 @@ width: 100%;
   font-size: 28px;
 }
 
-
+#searchBtn{
+  float: right;
+}
 
 .userInput{
 color: white;
