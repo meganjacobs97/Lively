@@ -1,16 +1,3 @@
-// document.addEventListener('DOMContentLoaded', function() {
-//   var elems = document.querySelectorAll('.parallax');
-//   var instances = M.Parallax.init(elems, options);
-// });
-
-
-
-// $(document).ready(function(){
-//   $('.parallax').parallax();
-// });
-
-
-
 var cityName;
 
 function searchCity() {
@@ -19,6 +6,10 @@ function searchCity() {
   cityName = $("#your-city").val().trim()
   cityName = cityName.replace(" ", "+")
   cityName = cityName.toLowerCase()
+  //if no search, give a default 
+  if(!cityName) {
+    cityName = "Seattle"; 
+  }
   // showHiking();
   // showEvents();
   // showFood();
@@ -297,13 +288,6 @@ function showFood() {
             window.open(data.restaurants[i].restaurant.url);
             });
             $("#foodResult" + j).append(newButton);
-
-            
-
-
-
-
-
 
         }
     });
