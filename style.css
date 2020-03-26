@@ -18,7 +18,9 @@ width: 100%;
   color:#f50057;
   font-size: 28px;
 }
-
+.hidden {
+  display: none; 
+} 
 
 #searchBtn{
   float: right;
