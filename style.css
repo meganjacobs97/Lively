@@ -9,7 +9,6 @@ top:  0;
 left: 0;
 width: 100%;
 }
-/* this color is not working */
 .navbar{
   background-color:  rgb(43, 3, 39); 
 }
@@ -20,6 +19,9 @@ width: 100%;
   font-size: 28px;
 }
 
+.prompt{
+  color: black;
+}
 
 
 .userInput{
