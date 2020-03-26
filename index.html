@@ -4,10 +4,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>lively</title>
-
-
-
+  <title> l i v e l y </title>
   <!-- jQuery -->
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
   <!-- Compiled and minified CSS -->
@@ -18,16 +15,19 @@
   <link href="https://fonts.googleapis.com/css?family=Pacifico&display=swap" rel="stylesheet">
   <!-- google font navbar tabs -->
   <link href="https://fonts.googleapis.com/css?family=Fredoka+One&display=swap" rel="stylesheet">
-
+  <!-- google icons -->
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
 </head>
 
+
 <body>
-
-
-
   <!-- Start Parallax Header -->
   <header>
     <nav class="navbar">
+      <div id="weather">
+        <h6 id="weather-content"></h6>
+        <i class="material-icons"></i>
+      </div>
       <div class="container">
         <div class="nav-wrapper">
           <a href="index.html" class="logo">lively</a>
@@ -38,48 +38,52 @@
   </header>
   <!-- End Parallax Header -->
 
-
-
   <!-- Start Parallax  -->
   <div class="parallax-container">
     <div class="parallax"><img
         src="https://images.unsplash.com/photo-1551632811-561732d1e306?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1650&q=80"
         class="responsive-img" alt="Parallax"></div>
   </div>
-  <div class="section deep-purple lighten-5">
-    <div class="prompt">
-      <div class="row container">
 
-        <h2 class="header">Are you looking to have some fun ?</h2>
-        <p class="grey-text text-darken-3 lighten-3">You are at the right place.</p>
+  <div class="section white">
+
+  
+  
+
+
+    <div class="row container">
+
+      <h2 class="header">Are you looking to have some fun ?</h2>
+      <p class="grey-text text-darken-3 lighten-3">You are at the right place.</p>
+    </div>
+    <div class="row container">
+
+      <h4 class="light">Here at lively, we have gathered some of the best recommendations for you!</h4>
+      <p align="justify">
+        Enter your city:</p>
+      <div class="row">
+        <form action="" method="post">
+          <div class="input-field col s6">
+            <input value="" id="your-city" type="text" class="validate autocomplete" placeholder="Cities">
+            <button id="searchBtn" onclick="searchCity()">Search</button>
+            <label class="active" for="your-city">Your City</label>
+          </div>
+        </form>
       </div>
-      <div class="row container">
+      <div id="weather"></div>
 
-        <h4 class="light">Here at lively, we have gathered some of the best recommendations for you!</h4>
-        <p align="justify">
-          Enter your city:</p>
-        <div class="row">
-          <form action="" method="post">
-            <div class="input-field col s6">
-              <input value="Seattle" id="your-city" type="text" class="validate">
-              <label class="active" for="your-city">Your City</label>
-            </div>
-          </form>
-        </div>
 
-      </div>
     </div>
   </div>
 
-
-
-
+ 
   <!-- results buttons on cards -->
   <div class="section  deep-purple lighten-5">
 
 
     <!-- outer row -->
     <div class="row">
+      <!-- Hiking Column -->
       <div class="col l4">
         <!-- card row -->
         <div class="row">
@@ -90,7 +94,7 @@
               <span class="card-title">Hiking</span>
             </div>
             <div class="card-content">
-              <a class="waves-effect waves-light btn">button</a>
+              <a id="hikingbutton" class="waves-effect waves-light btn" onclick="showHiking()">Show</a>
 
             </div>
 
@@ -99,38 +103,34 @@
 
         <!-- results row 1 -->
         <div class="row card">
-          <div class="card-content" id="hikingResult1">
+          <div class="card-content hidden" id="hikingResult1">
           </div>
         </div>
 
         <!-- results row 2 -->
         <div class="row card">
-          <div class="card-content" id="hikingResult2">
+          <div class="card-content hidden" id="hikingResult2">
           </div>
         </div>
         <!-- results row 3 -->
         <div class="row card">
-          <div class="card-content" id="hikingResult3">
+          <div class="card-content hidden" id="hikingResult3">
           </div>
         </div>
 
         <!-- results row 4 -->
         <div class="row card">
-          <div class="card-content" id="hikingResult4">
+          <div class="card-content hidden" id="hikingResult4">
           </div>
         </div>
         <!-- results row 5 -->
         <div class="row card">
-          <div class="card-content" id="hikingResult5">
+          <div class="card-content hidden" id="hikingResult5">
           </div>
-
         </div>
-
       </div>
 
-
-
-
+      <!-- Food Column -->
       <div class="col l4">
         <!-- card row -->
         <div class="row">
@@ -138,55 +138,48 @@
             <div class="card-image">
               <img
                 src="https://images.unsplash.com/photo-1498837167922-ddd27525d352?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1500&q=80">
-              <span class="card-title">Food
-                <a class="waves-effect waves-light btn">button</a>
-
-              </span>
+              <span class="card-title">Food</span>
             </div>
             <div class="card-content">
-              <a class="waves-effect waves-light btn">button</a>
-
+              <a id="foodbutton" class="waves-effect waves-light btn" onclick="showFood()">Show</a>
             </div>
-
           </div>
         </div>
         <!-- results row 1 -->
         <div class="row card">
-          <div class="card-content" id="foodResult1">
+          <div class="card-content hidden" id="foodResult1">
 
           </div>
+
         </div>
         <!-- results row 2 -->
         <div class="row card">
-          <div class="card-content" id="foodResult2">
+          <div class="card-content hidden" id="foodResult2">
 
           </div>
         </div>
         <!-- results row 3 -->
         <div class="row card">
-          <div class="card-content" id="foodResult3">
+          <div class="card-content hidden" id="foodResult3">
 
           </div>
 
         </div>
         <!-- results row 4 -->
         <div class="row card">
-          <div class="card-content" id="foodResult4">
+          <div class="card-content hidden" id="foodResult4">
 
           </div>
         </div>
         <!-- results row 5 -->
         <div class="row card">
-          <div class="card-content" id="foodResult5">
+          <div class="card-content hidden" id="foodResult5">
 
           </div>
         </div>
-
       </div>
 
-
-
-
+      <!-- Events Column -->
       <div class="col l4">
         <!-- card row -->
         <div class="row">
@@ -197,49 +190,44 @@
               <span class="card-title">Events</span>
             </div>
             <div class="card-content">
-              <a class="waves-effect waves-light btn">button</a>
+              <a id="eventsbutton" class="waves-effect waves-light btn" onclick="showEvents()">Show</a>
 
             </div>
           </div>
         </div>
         <!-- results row 1 -->
         <div class="row card">
-          <div class="card-content" id="eventResult1">
+          <div class="card-content hidden" id="eventResult1">
 
           </div>
         </div>
         <!-- results row 2 -->
         <div class="row card">
-          <div class="card-content" id="eventResult2">
+          <div class="card-content hidden" id="eventResult2">
 
           </div>
         </div>
         <!-- results row 3 -->
         <div class="row card">
-          <div class="card-content" id="eventResult3">
-
+          <div class="card-content hidden" id="eventResult3">
           </div>
         </div>
         <!-- results row 4 -->
         <div class="row card">
-          <div class="card-content" id="eventResult4">
+          <div class="card-content hidden" id="eventResult4">
 
           </div>
         </div>
         <!-- results row 5 -->
         <div class="row card">
-          <div class="card-content" id="eventResult5">
+          <div class="card-content hidden" id="eventResult5">
 
           </div>
         </div>
       </div>
-
     </div>
 
-
   </div>
-
-
 
   <div class="parallax-container">
     <div class="parallax"><img
@@ -247,8 +235,6 @@
         class="responsive-img" alt="Parallax"></div>
   </div>
   <!-- End Parallax  -->
-  
-
 
   <!-- footer -->
   <footer class="page-footer footer">
@@ -327,10 +313,6 @@
     </div>
   </footer>
 
-
-
-
-
   <!-- Start Parallax Javascript -->
   <script type="text/javascript">
     $(document).ready(function () {
@@ -344,11 +326,8 @@
 
   <!-- jQuery link -->
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
-
   <!-- moment (for date format) -->
   <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.24.0/moment.min.js"></script>
-
-
   <!-- Compiled and minified JavaScript -->
   <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
   <!-- link to js -->
