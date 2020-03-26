@@ -49,3 +49,7 @@ color: white;
   background-color: rgb(43, 3, 39);
 }
 
+.row.card{
+  margin-right:1px; margin-left:1px;
+}
+
