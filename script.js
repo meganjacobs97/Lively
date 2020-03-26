@@ -29,6 +29,7 @@ function searchCity() {
 
 
 function showHiking() {
+  
   //MAP call to get lon and lat for hiking 
 
   //if two word city, need to replace space with a plus sign 
@@ -52,6 +53,13 @@ function showHiking() {
       method: "GET"
     }).then(function (hikingResponse) {
       console.log(hikingResponse);
+
+      // empty divs in case there is content in them 
+      for(var i = 1; i < 6; i++) {
+        var elID = "#hikingResult" + i; 
+        $(elID).empty(); 
+
+      }
       var trail1Name = hikingResponse.trails[0].name;
       var trail1Location = hikingResponse.trails[0].location;
       var trail1Summary = hikingResponse.trails[0].summary;
@@ -203,6 +211,13 @@ function showEvents() {
     method: "GET"
   }).then(function (eventfulResponse) {
     console.log(eventfulResponse);
+
+    // empty divs in case there is content in them 
+    for(var i = 1; i < 6; i++) {
+      var elID = "#eventResult" + i; 
+      $(elID).empty(); 
+
+    }
 
     var event1 = eventfulResponse.firstChild.lastElementChild.firstElementChild;
 
@@ -424,6 +439,9 @@ function showWeather() {
           // console.log("feels like:            " + data.main.feels_like + " °C ------- " + feelsLikeF + " °F")
           // console.log("wind speed:            " + data.wind.speed + " kt  ------- " + windMph + " mph")
 
+          // empty div
+          $("#weather").empty(); 
+          
           var newp = $("<p>");
           newp.text("current weather: ------------ " + data.weather[0].description);
           $("#weather").append(newp);
@@ -457,6 +475,12 @@ function showFood() {
     dataType: 'json',
     processData: true,
   }).then(function (data) {
+    // empty divs in case there is content in them 
+    for(var i = 1; i < 6; i++) {
+      var elID = "#foodResult" + i; 
+      $(elID).empty(); 
+
+    }
     // console.log(data);
 
 
