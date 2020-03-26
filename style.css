@@ -13,6 +13,20 @@ width: 100%;
   background-color:  rgb(43, 3, 39); 
 }
 
+.material-icons {
+  float: right;
+  margin-bottom: 0;
+  margin-right: 10px;
+}
+
+#weather-content {
+  float: right;
+  margin-right: 50px;
+  margin-top: 20px;
+  font-family: helvetica;
+}
+
+
 .logo{
   font-family:'Pacifico', cursive;
   color:#f50057;

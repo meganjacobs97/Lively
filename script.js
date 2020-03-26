@@ -252,19 +252,10 @@ function showWeather() {
           // console.log("wind speed:            " + data.wind.speed + " kt  ------- " + windMph + " mph")
 
           // empty div
-          $("#weather").empty(); 
-          
-          var newp = $("<p>");
-          newp.text("current weather: ------------ " + data.weather[0].description);
-          $("#weather").append(newp);
-
-          var newp2 = $("<p>");
-          newp2.text("current temperature: ------- " + data.main.temp + " °C --- " + tempF + " °F");
-          $("#weather").append(newp2);
-
-          var newp3 = $("<p>");
-          newp3.text("feels like: -------------------- " + data.main.feels_like + " °C --- " + feelsLikeF + " °F");
-          $("#weather").append(newp3);
+          $(".material-icons").empty();
+          $("#weather-content").empty();
+          $(".material-icons").text("cloud");
+          $("#weather-content").text(data.name + " " + data.sys.country + " - " + data.weather[0].description + ", " + tempF + "     °F");
 
         }
       });
