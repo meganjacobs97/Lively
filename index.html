@@ -17,6 +17,8 @@
   <link href="https://fonts.googleapis.com/css?family=Fredoka+One&display=swap" rel="stylesheet">
   <!-- google icons -->
   <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+  <!-- google font for white text -->
+  <link href="https://fonts.googleapis.com/css?family=Courgette&display=swap" rel="stylesheet">
 </head>
 
 
@@ -49,20 +51,24 @@
 
     <div class="row container">
 
-      <h2 class="header">Are you looking to have some fun ?</h2>
-      <p class="grey-text text-darken-3 lighten-3">You are at the right place.</p>
+      <h2 id="livealittle" class="header">lets live a little!</h2>
+      <p class="grey-text text-darken-3 lighten-3"></p>
     </div>
     <div class="row container">
 
-      <h4 class="light">Here at lively, we have gathered some of the best recommendations for you!</h4>
+      <h4 id="infoaboutsite" class="light">Here at lively, we have gathered some of the best recommendations for you!</h4>
       <p align="justify">
-        Enter your city:</p>
-      <div class="row">
+        </p>
+      <div id="searchdiv" class="row">
         <form action="" method="post">
-          <div class="input-field col s6">
-            <input value="" id="your-city" type="text" class="validate autocomplete" placeholder="Cities">
+          <div  class="input-field col s2">
+          </div>
+          <div  class="input-field col s8">
+            <input value="" id="your-city" type="text" class="validate autocomplete" placeholder="Enter Your City">
             <button id="searchBtn" class="waves-effect waves-light btn" onclick="searchCity()">Search</button>
-            <label class="active" for="your-city">Your City</label>
+            <label class="active" for="your-city"></label>
+          </div>
+          <div  class="input-field col s2">
           </div>
         </form>
       </div>
@@ -86,7 +92,7 @@
           <div class="card">
             <div class="card-image">
               <img
-                src="assets/images/hikingcard.png">
+                src="assets/images/hikingcard.jpg">
               <span class="card-title">Hiking</span>
             </div>
             <div class="card-content">

@@ -58,7 +58,6 @@ color: white;
 
 }
 
-/* the color not working */
 .footer{
   background-color: rgb(43, 3, 39);
 }
@@ -78,3 +77,26 @@ color: white;
   margin-left:1px;
 }
 
+#livealittle{
+  font-family: 'Courgette', cursive;
+  text-align: center ;
+}
+
+#infoaboutsite{
+  font-family: 'Courgette', cursive;
+  text-align: center ;
+
+}
+
+#your-city{
+align-content: center;
+}
+
+#searchdiv{
+  align-content: center;
+
+}
+
+.names{
+  font-weight: bold;
+}
