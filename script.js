@@ -230,7 +230,7 @@ function showWeather() {
   var weatherURL = "https://api.openweathermap.org/data/2.5/weather?q=" + cityName + "&units=imperial&APPID=" + weatherKey;
   var metric = "https://api.openweathermap.org/data/2.5/weather?q=" + cityName + "&units=metric&APPID=" + weatherKey;
 
-  console.log(cityName)
+  // console.log(cityName)
 
   $.ajax({
     url: weatherURL,
@@ -256,7 +256,7 @@ function showWeather() {
           $(".material-icons").empty();
           $("#weather-content").empty();
           $(".material-icons").text("cloud");
-          $("#weather-content").text(data.name + " " + data.sys.country + " - " + data.weather[0].description + ", " + tempF + "     °F");
+          $("#weather-content").text(data.name + ", " + data.sys.country + " - " + data.weather[0].description + ", " + tempF + "     °F");
 
         }
       });
