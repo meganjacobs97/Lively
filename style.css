@@ -1,0 +1,102 @@
+body{
+  background-color: rgba(73, 53, 72, 1);
+}
+
+header{
+z-index: 1000;
+position: fixed;
+top:  0;
+left: 0;
+width: 100%;
+}
+.navbar{
+  background-color:  rgb(43, 3, 39); 
+}
+
+.material-icons {
+  float: right;
+  margin-bottom: 0;
+  margin-right: 10px;
+}
+
+#weather-content {
+  float: right;
+  margin-right: 50px;
+  margin-top: 20px;
+  font-family: helvetica;
+}
+
+
+.logo{
+  font-family:'Pacifico', cursive;
+  color:#f50057;
+  font-size: 28px;
+}
+.hidden {
+  display: none; 
+} 
+
+#searchBtn{
+  float: right;
+}
+
+.prompt{
+  color: black;
+}
+
+.hidden {
+  display: none; 
+}
+
+
+.userInput{
+color: white;
+}
+
+.card{
+  margin: 10px;
+
+}
+
+.footer{
+  background-color: rgb(43, 3, 39);
+}
+
+
+#footerTitle{
+  margin: 20px;
+}
+
+.footer-copyright {
+  margin-left: 20px;
+  margin-right: 20px;
+}
+
+.row.card{
+  margin-right:1px; 
+  margin-left:1px;
+}
+
+#livealittle{
+  font-family: 'Courgette', cursive;
+  text-align: center ;
+}
+
+#infoaboutsite{
+  font-family: 'Courgette', cursive;
+  text-align: center ;
+
+}
+
+#your-city{
+align-content: center;
+}
+
+#searchdiv{
+  align-content: center;
+
+}
+
+.names{
+  font-weight: bold;
+}

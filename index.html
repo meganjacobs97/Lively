@@ -1,0 +1,340 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title> l i v e l y </title>
+  <!-- jQuery -->
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+  <!-- Compiled and minified CSS -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
+  <!-- css link -->
+  <link rel="stylesheet" href="style.css">
+  <!-- google font link for logo lively -->
+  <link href="https://fonts.googleapis.com/css?family=Pacifico&display=swap" rel="stylesheet">
+  <!-- google font navbar tabs -->
+  <link href="https://fonts.googleapis.com/css?family=Fredoka+One&display=swap" rel="stylesheet">
+  <!-- google icons -->
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+  <!-- google font for white text -->
+  <link href="https://fonts.googleapis.com/css?family=Courgette&display=swap" rel="stylesheet">
+</head>
+
+
+<body>
+  <!-- Start Parallax Header -->
+  <header>
+    <nav class="navbar">
+      <div id="weather">
+        <h6 id="weather-content"></h6>
+        <i class="material-icons"></i>
+      </div>
+      <div class="container">
+        <div class="nav-wrapper">
+          <a href="index.html" class="logo">lively</a>
+
+        </div>
+      </div>
+    </nav>
+  </header>
+  <!-- End Parallax Header -->
+
+  <!-- Start Parallax  -->
+  <div class="parallax-container">
+    <div class="parallax"><img
+        src="assets/images/hikingbkgd.jpg"
+        class="responsive-img" alt="Parallax"></div>
+  </div>
+
+  <div class="section white">
+
+    <div class="row container">
+
+      <h2 id="livealittle" class="header">lets live a little!</h2>
+      <p class="grey-text text-darken-3 lighten-3"></p>
+    </div>
+    <div class="row container">
+
+      <h4 id="infoaboutsite" class="light">Here at lively, we have gathered some of the best recommendations for you!</h4>
+      <p align="justify">
+        </p>
+      <div id="searchdiv" class="row">
+        <form action="" method="post">
+          <div  class="input-field col s2">
+          </div>
+          <div  class="input-field col s8">
+            <input value="" id="your-city" type="text" class="validate autocomplete" placeholder="Enter Your City">
+            <button id="searchBtn" class="waves-effect waves-light btn" onclick="searchCity()">Search</button>
+            <label class="active" for="your-city"></label>
+          </div>
+          <div  class="input-field col s2">
+          </div>
+        </form>
+      </div>
+      <div id="weather"></div>
+
+
+    </div>
+  </div>
+
+ 
+  <!-- results buttons on cards -->
+  <div class="section  deep-purple lighten-5">
+
+
+    <!-- outer row -->
+    <div class="row">
+      <!-- Hiking Column -->
+      <div class="col l4">
+        <!-- card row -->
+        <div class="row">
+          <div class="card">
+            <div class="card-image">
+              <img
+                src="assets/images/hikingcard.jpg">
+              <span class="card-title">Hiking</span>
+            </div>
+            <div class="card-content">
+              <a id="hikingbutton" class="waves-effect waves-light btn" onclick="showHiking()">Show</a>
+
+            </div>
+
+          </div>
+        </div>
+
+        <!-- results row 1 -->
+        <div class="row card">
+          <div class="card-content hidden" id="hikingResult1">
+          </div>
+        </div>
+
+        <!-- results row 2 -->
+        <div class="row card">
+          <div class="card-content hidden" id="hikingResult2">
+          </div>
+        </div>
+        <!-- results row 3 -->
+        <div class="row card">
+          <div class="card-content hidden" id="hikingResult3">
+          </div>
+        </div>
+
+        <!-- results row 4 -->
+        <div class="row card">
+          <div class="card-content hidden" id="hikingResult4">
+          </div>
+        </div>
+        <!-- results row 5 -->
+        <div class="row card">
+          <div class="card-content hidden" id="hikingResult5">
+          </div>
+        </div>
+      </div>
+
+      <!-- Food Column -->
+      <div class="col l4">
+        <!-- card row -->
+        <div class="row">
+          <div class="card">
+            <div class="card-image">
+              <img
+                src="assets/images/foodcard.jpg">
+              <span class="card-title">Food</span>
+            </div>
+            <div class="card-content">
+              <a id="foodbutton" class="waves-effect waves-light btn" onclick="showFood()">Show</a>
+            </div>
+          </div>
+        </div>
+        <!-- results row 1 -->
+        <div class="row card">
+          <div class="card-content hidden" id="foodResult1">
+
+          </div>
+
+        </div>
+        <!-- results row 2 -->
+        <div class="row card">
+          <div class="card-content hidden" id="foodResult2">
+
+          </div>
+        </div>
+        <!-- results row 3 -->
+        <div class="row card">
+          <div class="card-content hidden" id="foodResult3">
+
+          </div>
+
+        </div>
+        <!-- results row 4 -->
+        <div class="row card">
+          <div class="card-content hidden" id="foodResult4">
+
+          </div>
+        </div>
+        <!-- results row 5 -->
+        <div class="row card">
+          <div class="card-content hidden" id="foodResult5">
+
+          </div>
+        </div>
+      </div>
+
+      <!-- Events Column -->
+      <div class="col l4">
+        <!-- card row -->
+        <div class="row">
+          <div class="card">
+            <div class="card-image">
+              <img
+                src="assets/images/Eventscard.png">
+              <span class="card-title">Events</span>
+            </div>
+            <div class="card-content">
+              <a id="eventsbutton" class="waves-effect waves-light btn" onclick="showEvents()">Show</a>
+
+            </div>
+          </div>
+        </div>
+        <!-- results row 1 -->
+        <div class="row card">
+          <div class="card-content hidden" id="eventResult1">
+
+          </div>
+        </div>
+        <!-- results row 2 -->
+        <div class="row card">
+          <div class="card-content hidden" id="eventResult2">
+
+          </div>
+        </div>
+        <!-- results row 3 -->
+        <div class="row card">
+          <div class="card-content hidden" id="eventResult3">
+          </div>
+        </div>
+        <!-- results row 4 -->
+        <div class="row card">
+          <div class="card-content hidden" id="eventResult4">
+
+          </div>
+        </div>
+        <!-- results row 5 -->
+        <div class="row card">
+          <div class="card-content hidden" id="eventResult5">
+
+          </div>
+        </div>
+      </div>
+    </div>
+
+  </div>
+
+  <div class="parallax-container">
+    <div class="parallax"><img
+        src="assets/images/cafebkgd.jpg"
+        class="responsive-img" alt="Parallax"></div>
+  </div>
+  <!-- End Parallax  -->
+
+  <!-- footer -->
+  <footer class="page-footer footer">
+    <div class="row">
+      <!-- <div class="col l6 m6 s12"> -->
+      <h5 id="footerTitle" class="white-text">Developers:</h5>
+      <!-- <p class="grey-text text-lighten-4"> -->
+      <!-- </p> -->
+      <!-- </div> -->
+      <div class="col l3 m3 s12">
+        <!-- <h6 class="names" class="white-text">Eden</h6> -->
+        <div class="card">
+          <div class="card-image">
+            <img src="assets/images/Eden.png">
+          </div>
+          <div class="card-content">
+            <h6 class="black-text names">Eden Garcia Lopez</h6>
+            <ul>
+              <li><a class="black-text text-lighten-3">Front End Developer</a></li>
+              <li><a class="black-text text-lighten-3">Designer</a></li>
+            </ul>
+          </div>
+        </div>
+      </div>
+      <div class="col l3 m3 s12">
+        <!-- <h6 class="names" class="white-text">Yalda</h6> -->
+        <div class="card">
+          <div class="card-image">
+            <img src="assets/images/Yalda.png">
+          </div>
+          <div class="card-content">
+            <h6 class="black-text names">Yalda Ali Aghazadeh</h6>
+            <ul>
+              <li><a class="black-text text-lighten-3">Front End Developer/Designer</a></li>
+              <li><a class="black-text text-lighten-3">Project Manager</a></li>
+            </ul>
+          </div>
+        </div>
+      </div>
+      <div class="col l3 m3 s12">
+        <!-- <h6 class="names" class="white-text">Megan</h6> -->
+        <div class="card">
+          <div class="card-image">
+            <img src="assets/images/Megan.png">
+          </div>
+          <div class="card-content">
+            <h6 class="black-text names">Megan Jacobs</h6>
+            <ul>
+              <li><a class="black-text text-lighten-3">Back End Developer</a></li>
+              <li><a class="black-text text-lighten-3">Git Master</a></li>
+            </ul>
+          </div>
+        </div>
+      </div>
+      <div class="col l3 m3 s12">
+        <!-- <h6 class="names" class="white-text">Yuri</h6> -->
+        <div class="card">
+          <div class="card-image">
+            <img src="assets/images/Yuri.png">
+          </div>
+          <div class="card-content">
+            <h6 class="black-text names">Yuri Oliveira</h6>
+            <ul>
+              <li><a class="black-text text-lighten-3">Back End Developer</a></li>
+              <li><a class="black-text text-lighten-3"> Designer </a></li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="footer-copyright">
+      <div class="col l6 m6 s12">&copy; 2020 Copyright <a class="white-text text-lighten-4" href=""
+          target="_blank">lively</a></div>
+      <div class="col l6 m6 s12"><a class="grey-text text-lighten-4 right" href="http://www.freetimelearning.com/"
+          target="_blank">Designed By Passionate Developers</a></div>
+    </div>
+  </footer>
+
+  <!-- Start Parallax Javascript -->
+  <script type="text/javascript">
+    $(document).ready(function () {
+      $('.parallax').parallax();
+    });
+  </script>
+  <!-- EndParallax Javascript -->
+
+
+
+
+  <!-- jQuery link -->
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+  <!-- moment (for date format) -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.24.0/moment.min.js"></script>
+  <!-- Compiled and minified JavaScript -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+  <!-- link to js -->
+  <script src="script.js"></script>
+
+</body>
+
+</html>
