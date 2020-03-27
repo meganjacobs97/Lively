@@ -63,6 +63,11 @@ color: white;
   background-color: rgb(43, 3, 39);
 }
 
+
+#footerTitle{
+  margin: 20px;
+
+}
 .row.card{
   margin-right:1px; margin-left:1px;
 }
