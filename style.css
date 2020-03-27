@@ -66,9 +66,15 @@ color: white;
 
 #footerTitle{
   margin: 20px;
-
 }
+
+.footer-copyright {
+  margin-left: 20px;
+  margin-right: 20px;
+}
+
 .row.card{
-  margin-right:1px; margin-left:1px;
+  margin-right:1px; 
+  margin-left:1px;
 }
 
