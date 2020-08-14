@@ -7,7 +7,6 @@ function searchCity() {
   cityName = cityName.replace(" ", "+")
   cityName = cityName.toLowerCase()
   //if no search, give a default 
-  debugger;
   if (!cityName) {
     cityName = "Seattle";
   }

@@ -3,11 +3,11 @@ body{
 }
 
 header{
-z-index: 1000;
-position: fixed;
-top:  0;
-left: 0;
-width: 100%;
+  z-index: 1000;
+  position: fixed;
+  top:  0;
+  left: 0;
+  width: 100%;
 }
 .navbar{
   background-color:  rgb(43, 3, 39); 
@@ -99,4 +99,22 @@ align-content: center;
 
 .names{
   font-weight: bold;
+}
+
+@media only screen and (max-device-width: 410px) {
+  #weather-content {
+    width: 50%;
+    float: right;
+    font-family: helvetica;
+    font-size: 100%; 
+  }
+  .material-icons {
+    float: right;
+    margin-bottom: 0;
+    margin-right: 2%;
+  }
+  .logo{
+    font-size: 100%;
+  }
+
 }
